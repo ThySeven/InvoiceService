@@ -1,9 +1,12 @@
-﻿namespace UserService.Models
+﻿namespace InvoiceService.Models
 {
 
     public class LoginModel
     {
-        public string? Username { get; set; }
-        public string? Password { get; set; }
+        private string? username;
+        private string? password;
+
+        public string? Username { get => username; set => username = value; }
+        public string? Password { get => password; set => password = value; }
     }
 }

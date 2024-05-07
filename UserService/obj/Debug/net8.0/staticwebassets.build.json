@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "O8Tqr60KHaal7sbBqGqAczjLLnVLN/6xBqPiCBbMeO8=",
-  "Source": "UserService",
-  "BasePath": "_content/UserService",
+  "Hash": "xX+A2Eg/0X6P97Wzv3lCa+paU8xDYts5bx3I29ohPxI=",
+  "Source": "InvoiceService",
+  "BasePath": "_content/InvoiceService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

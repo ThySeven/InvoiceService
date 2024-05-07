@@ -1,4 +1,4 @@
-﻿namespace UserService
+﻿namespace InvoiceService
 {
     public class Worker : BackgroundService
     {

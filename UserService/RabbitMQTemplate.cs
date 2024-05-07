@@ -1,5 +1,5 @@
 ﻿
-namespace UserService
+namespace InvoiceService
 {
     using System.Text;
     using RabbitMQ.Client;

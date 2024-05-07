@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\invoiceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\invoiceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06058640-7082-47AD-9720-6A282C83EF19}|InvoiceService.Test\\InvoiceService.Test.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\invoiceservice.test\\invoicemongodbrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06058640-7082-47AD-9720-6A282C83EF19}|InvoiceService.Test\\InvoiceService.Test.csproj|solutionrelative:invoiceservice.test\\invoicemongodbrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\repositorys\\invoicemongosqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\repositorys\\invoicemongosqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvoiceService",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\InvoiceService.csproj",
+              "RelativeDocumentMoniker": "UserService\\InvoiceService.csproj",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\InvoiceService.csproj",
+              "RelativeToolTip": "UserService\\InvoiceService.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-07T09:20:03.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceMongoDBRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
+              "RelativeDocumentMoniker": "InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
+              "RelativeToolTip": "InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAmwB4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:58:22.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InvoiceMongoSQLRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
+              "RelativeDocumentMoniker": "UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
+              "RelativeToolTip": "UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:58:13.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "UserService\\Controllers\\TestController.cs",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\TestController.cs",
+              "RelativeToolTip": "UserService\\Controllers\\TestController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:56:32.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InvoiceController.cs",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\InvoiceController.cs",
+              "RelativeDocumentMoniker": "UserService\\Controllers\\InvoiceController.cs",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\InvoiceController.cs",
+              "RelativeToolTip": "UserService\\Controllers\\InvoiceController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAUwCYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:54:29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "UserService\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "UserService\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:54:20.473Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 637,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

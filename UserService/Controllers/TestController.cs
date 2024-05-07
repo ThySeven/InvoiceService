@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace UserService.Controllers
+namespace InvoiceService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
