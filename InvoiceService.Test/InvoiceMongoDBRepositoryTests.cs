@@ -13,7 +13,7 @@ namespace InvoiceService.Test
     public class InvoiceMongoDBRepositoryTests
     {
         private Mock<IMongoCollection<InvoiceModel>> mockCollection;
-        private IInvoiceRepository repository;
+        private InvoiceRepository repository; // This should be the actual class being tested.
         private Mock<IAsyncCursor<InvoiceModel>> mockCursor;
 
         [TestInitialize]
@@ -27,19 +27,16 @@ namespace InvoiceService.Test
             mockClient.Setup(c => c.GetDatabase(It.IsAny<string>(), null)).Returns(mockDatabase.Object);
             mockDatabase.Setup(d => d.GetCollection<InvoiceModel>(It.IsAny<string>(), null)).Returns(mockCollection.Object);
 
-            Environment.SetEnvironmentVariable("MongoDBConnectionString", "localhost:27018");
-            repository = new InvoiceIRepository();  // No change in instantiation
+            repository = new InvoiceRepository(mockDatabase.Object);  // Assuming the constructor takes a MongoClient and a string.
         }
 
 
         [TestMethod]
         public void CreateInvoice_InsertsInvoice()
         {
-            var invoice = new InvoiceModel();
-
+            var invoice = new InvoiceModel {};
             repository.CreateInvoice(invoice);
-
-            mockCollection.Verify(c => c.InsertOne(invoice, null, default), Times.Once);
+            mockCollection.Verify(c => c.InsertOne(It.IsAny<InvoiceModel>(), null, default(CancellationToken)), Times.Once);
         }
 
         [TestMethod]
@@ -68,8 +65,8 @@ namespace InvoiceService.Test
         [TestMethod]
         public void GetById_FindsInvoiceById()
         {
-            int invoiceId = 1;
-            var invoice = new InvoiceModel { Id = invoiceId };
+            var invoice = new InvoiceModel {};
+            string invoiceId = invoice.Id;
             SetUpCursor(new List<InvoiceModel> { invoice });
 
             var result = repository.GetById(invoiceId);
@@ -80,7 +77,7 @@ namespace InvoiceService.Test
         [TestMethod]
         public void UpdateInvoice_UpdatesInvoice()
         {
-            var invoiceToUpdate = new InvoiceModel() { Id = 1, Price = 200 };
+            var invoiceToUpdate = new InvoiceModel() { Price = 200 };
             SetUpCursor(new List<InvoiceModel> { invoiceToUpdate });
 
             var result = repository.UpdateInvoice(invoiceToUpdate);

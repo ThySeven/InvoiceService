@@ -19,11 +19,11 @@
         "LokiServerName": "LokiServer",
         "LokiEndpoint": "http://localhost:3100",
         "RabbitMQHostName": "localhost",
-        "RabbitMQQueueName": "queue",
+        "RabbitMQQueueName": "invoices",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "VAULT_IP": "https://localhost:8201",
         "VAULT_SECRET": "1a2b3c4d-5e6f-7g8h-9i0j-123456789abc",
-        "MongoDBConnectionString": "localhost:27018"
+        "MongoDBConnectionString": "mongodb://admin:1234@localhost:27018"
       }
     },
     "https": {
@@ -36,11 +36,11 @@
         "LokiServerName": "LokiServer",
         "LokiEndpoint": "http://localhost:3100",
         "RabbitMQHostName": "localhost",
-        "RabbitMQQueueName": "queue",
+        "RabbitMQQueueName": "invoices",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "VAULT_IP": "https://localhost:8201",
         "VAULT_SECRET": "1a2b3c4d-5e6f-7g8h-9i0j-123456789abc",
-        "MongoDBConnectionString": "localhost:27018"
+        "MongoDBConnectionString": "mongodb://admin:1234@localhost:27018"
       }
     },
     "IIS Express": {

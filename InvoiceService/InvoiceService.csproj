@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Compile Remove="Repositorys\IInvoiceRepositorys.cs" />
-    <Compile Remove="Repositorys\InvoiceRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

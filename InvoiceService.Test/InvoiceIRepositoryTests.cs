@@ -15,8 +15,8 @@ namespace InvoiceService.Test
             var mockService = new Mock<IInvoiceRepository>();
             var invoices = new List<InvoiceModel>
             {
-                new InvoiceModel { Id = 1, Description = "Test Invoice 1", Price = 100.0 },
-                new InvoiceModel { Id = 2, Description = "Test Invoice 2", Price = 200.0 }
+                new InvoiceModel { Description = "Test Invoice 1", Price = 100.0 },
+                new InvoiceModel { Description = "Test Invoice 2", Price = 200.0 }
             };
 
             mockService.Setup(s => s.GetAll()).Returns(invoices);
@@ -32,15 +32,15 @@ namespace InvoiceService.Test
         public void GetById_ExistingId_ReturnsCorrectInvoice()
         {
             var mockService = new Mock<IInvoiceRepository>();
-            var invoice = new InvoiceModel { Id = 1, Description = "Test Invoice", Price = 100.0 };
+            var invoice = new InvoiceModel { Description = "Test Invoice", Price = 100.0 };
+            string invoiceId = invoice.Id;
+            mockService.Setup(s => s.GetById(invoiceId)).Returns(invoice);
 
-            mockService.Setup(s => s.GetById(1)).Returns(invoice);
-
-            var result = mockService.Object.GetById(1);
+            var result = mockService.Object.GetById(invoiceId);
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.Id);
-            mockService.Verify(s => s.GetById(It.IsAny<int>()), Times.Once);
+            Assert.AreEqual(invoiceId, result.Id);
+            mockService.Verify(s => s.GetById(It.IsAny<string>()), Times.Once);
         }
 
         [TestMethod]
@@ -72,8 +72,8 @@ namespace InvoiceService.Test
         public void UpdateInvoice_UpdatesExistingInvoice()
         {
             var mockService = new Mock<IInvoiceRepository>();
-            var invoice = new InvoiceModel { Id = 1, Description = "old Invoice", Price = 150.0 };
-            var newInvoice = new InvoiceModel { Id = 1, Description = "Updated Invoice", Price = 150.0 };
+            var invoice = new InvoiceModel { Description = "old Invoice", Price = 150.0 };
+            var newInvoice = new InvoiceModel { Description = "Updated Invoice", Price = 150.0 };
 
             mockService.Setup(s => s.UpdateInvoice(invoice)).Returns(newInvoice);
 
@@ -100,14 +100,13 @@ namespace InvoiceService.Test
         public void SendInvoice_SendsInvoiceToMailQueue()
         {
             var mockService = new Mock<IInvoiceRepository>();
-            var invoice = new InvoiceModel { Id = 1, Description = "Invoice for Email", Price = 75.0 };
-            var mailQueue = "invoices@example.com";
+            var invoice = new InvoiceModel { Description = "Invoice for Email", Price = 75.0 };
 
-            mockService.Setup(s => s.SendInvoice(invoice, mailQueue)).Verifiable();
+            mockService.Setup(s => s.SendInvoice(invoice)).Verifiable();
 
-            mockService.Object.SendInvoice(invoice, mailQueue);
+            mockService.Object.SendInvoice(invoice);
 
-            mockService.Verify(s => s.SendInvoice(It.IsAny<InvoiceModel>(), It.IsAny<string>()), Times.Once);
+            mockService.Verify(s => s.SendInvoice(It.IsAny<InvoiceModel>()), Times.Once);
         }
     }
 }

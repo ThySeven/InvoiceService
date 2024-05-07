@@ -7,22 +7,33 @@ using System.Collections.Generic;
 using System.Linq;
 namespace InvoiceService.Repositorys
 {
-    public class InvoiceIRepository : IInvoiceRepository
+    public class InvoiceRepository : IInvoiceRepository
     {
         private readonly IMongoCollection<InvoiceModel> _invoices;
         private string _connectionString = Environment.GetEnvironmentVariable("MongoDBConnectionString");
+        IAuctionCoreQueue queue;
 
-        public InvoiceIRepository()
+        public InvoiceRepository()
         {
+            queue = new RabbitMQueue();
             var client = new MongoClient(_connectionString);
             var database = client.GetDatabase("AuctionCoreServices");
             _invoices = database.GetCollection<InvoiceModel>("Invoices");
+        }
+        public InvoiceRepository(IMongoDatabase db)
+        {
+            _invoices = db.GetCollection<InvoiceModel>("Invoices");
         }
 
 
         public void CreateInvoice(InvoiceModel invoice)
         {
             _invoices.InsertOne(invoice);
+            queue.Add(new AutoMail
+            {
+                Model = new InvoiceModel(),
+                ReceiverMail = "heh"
+            });
         }
 
         public void DeleteInvoice(int id)
@@ -36,13 +47,13 @@ namespace InvoiceService.Repositorys
             return _invoices.Find(invoice => true).ToList();
         }
 
-        public InvoiceModel GetById(int id)
+        public InvoiceModel GetById(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
             return _invoices.Find(filter).SingleOrDefault();
         }
 
-        public void SendInvoice(InvoiceModel invoice, string mailQueue)
+        public void SendInvoice(InvoiceModel invoice)
         {
             // Simulate sending the invoice via a messaging system or an email service.
             // This operation would typically involve another service and not directly relate to MongoDB actions.

@@ -6,7 +6,7 @@ namespace InvoiceService.Repository
     {
         IEnumerable<InvoiceModel> GetAll();
 
-        InvoiceModel GetById(int id);
+        InvoiceModel GetById(string id);
 
         void CreateInvoice (InvoiceModel invoice);
         void DeleteInvoice (int id);
@@ -15,7 +15,7 @@ namespace InvoiceService.Repository
 
         void ValidateInvoice(int id);
 
-        void SendInvoice (InvoiceModel invoice , string mailQueue);
+        void SendInvoice (InvoiceModel invoice);
 
     }
 }

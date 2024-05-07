@@ -1,3 +1,5 @@
+using InvoiceService.Repository;
+using InvoiceService.Repositorys;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using NLog;
@@ -13,50 +15,57 @@ var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings()
 logger.Debug("init main");
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-var EndPoint = Environment.GetEnvironmentVariable("VAULT_IP");
-var httpClientHandler = new HttpClientHandler();
-httpClientHandler.ServerCertificateCustomValidationCallback =
-(message, cert, chain, sslPolicyErrors) => { return true; };
-
-
-IAuthMethodInfo authMethod =
-new TokenAuthMethodInfo(Environment.GetEnvironmentVariable("VAULT_SECRET"));
-// Initialize settings. You can also set proxies, custom delegates etc. here.
-var vaultClientSettings = new VaultClientSettings(EndPoint, authMethod)
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
+try
 {
-    Namespace = "",
-    MyHttpClientProviderFunc = handler
-    => new HttpClient(httpClientHandler)
-    {
-        BaseAddress = new Uri(EndPoint)
-    }
-};
-IVaultClient vaultClient = new VaultClient(vaultClientSettings);
-Secret<SecretData> kv2Secret = await vaultClient.V1.Secrets.KeyValue.V2
-.ReadSecretAsync(path: "jwt", mountPoint: "secret");
-var jwtSecret = kv2Secret.Data.Data["secret"];
-var jwtIssuer = kv2Secret.Data.Data["issuer"];
+    var EndPoint = Environment.GetEnvironmentVariable("VAULT_IP");
+    var httpClientHandler = new HttpClientHandler();
+    httpClientHandler.ServerCertificateCustomValidationCallback =
+    (message, cert, chain, sslPolicyErrors) => { return true; };
 
-string mySecret = Convert.ToString(jwtSecret) ?? "none";
-string myIssuer = Convert.ToString(jwtIssuer) ?? "none";
-builder.Services
-.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters()
+    IAuthMethodInfo authMethod =
+    new TokenAuthMethodInfo(Environment.GetEnvironmentVariable("VAULT_SECRET"));
+    // Initialize settings. You can also set proxies, custom delegates etc. here.
+    var vaultClientSettings = new VaultClientSettings(EndPoint, authMethod)
     {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = myIssuer,
-        ValidAudience = "http://localhost",
-        IssuerSigningKey =
-    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(mySecret))
+        Namespace = "",
+        MyHttpClientProviderFunc = handler
+        => new HttpClient(httpClientHandler)
+        {
+            BaseAddress = new Uri(EndPoint)
+        }
     };
-});
+
+    IVaultClient vaultClient = new VaultClient(vaultClientSettings);
+    Secret<SecretData> kv2Secret = await vaultClient.V1.Secrets.KeyValue.V2
+    .ReadSecretAsync(path: "jwt", mountPoint: "secret");
+    var jwtSecret = kv2Secret.Data.Data["secret"];
+    var jwtIssuer = kv2Secret.Data.Data["issuer"];
+
+    string mySecret = Convert.ToString(jwtSecret) ?? "none";
+    string myIssuer = Convert.ToString(jwtIssuer) ?? "none";
+    builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = myIssuer,
+            ValidAudience = "http://localhost",
+            IssuerSigningKey =
+        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(mySecret))
+        };
+    });
+}
+catch(Exception ex)
+{
+    logger.Fatal($"JWT Failed error: {ex}");
+}
 // Add services to the container.
 
 
@@ -64,8 +73,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Logging.ClearProviders();
-builder.Host.UseNLog();
+builder.Services.AddSingleton<IInvoiceRepository, InvoiceRepository>();
+
 var app = builder.Build();
 
 app.Logger.LogInformation("Starting service");

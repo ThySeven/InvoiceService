@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserService\InvoiceService.csproj" />
+    <ProjectReference Include="..\InvoiceService\InvoiceService.csproj" />
   </ItemGroup>
   
 </Project>
