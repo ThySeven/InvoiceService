@@ -38,7 +38,7 @@ namespace InvoiceService.Controllers
             {
                 PaymentModel payment = new PaymentModel
                 {
-                    price = invoice.Price,
+                    Price = invoice.Price,
                     CurrencyCode = "DKK",
                     InvoiceNumber = invoice.Id,
                     Reference = "Ref987654",

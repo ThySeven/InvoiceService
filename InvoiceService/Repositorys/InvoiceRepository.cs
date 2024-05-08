@@ -63,7 +63,7 @@ namespace InvoiceService.Repositorys
   <h2>Grøn & Olsen</h2>
   <p>Sønderhøj 30, 8260 Viby J</p>
   <p>Phone: 88 88 88 88</p>
-  <p>Email: grønogolsen@gmail.com</p>
+  <p>Email: gronogolsen@gmail.com</p>
 </div>
 
 <div class=""invoice-details"">
