@@ -17,8 +17,8 @@ namespace InvoiceService.Repository
 
         void SendInvoice (InvoiceModel invoice);
 
-        void CreatePaymentLink(PaymentModel payment);
+        string CreatePaymentLink(PaymentModel payment);
 
-        void SendParcelInformation(ParcelModel parcel);
+        string SendParcelInformation(ParcelModel parcel);
     }
 }

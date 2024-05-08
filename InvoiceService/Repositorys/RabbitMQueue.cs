@@ -31,19 +31,21 @@ namespace InvoiceService.Repositorys
 
         public void Add(AutoMail mail)
         {
-            var message = JsonSerializer.Serialize(mail);
-            var bytes = Encoding.UTF8.GetBytes(message);
+            try
+            {
+                var message = JsonSerializer.Serialize(mail);
+                var bytes = Encoding.UTF8.GetBytes(message);
 
-            channel.BasicPublish(exchange: "",
-                routingKey: queue,
-                basicProperties: null,
-                body: bytes);
-            AuctionCoreLogger.Logger.Info("sent " + mail.ReceiverMail);
-        }
-
-        public void Update(AutoMail mail)
-        {
-            throw new NotImplementedException();
+                channel.BasicPublish(exchange: "",
+                    routingKey: queue,
+                    basicProperties: null,
+                    body: bytes);
+                AuctionCoreLogger.Logger.Info("sent " + mail.ReceiverMail);
+            }
+            catch (Exception ex)
+            {
+                AuctionCoreLogger.Logger.Fatal($"Failed to push to RabbitMQ: {ex}");
+            }
         }
     }
 }

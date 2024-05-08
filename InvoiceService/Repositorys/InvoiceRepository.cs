@@ -31,7 +31,7 @@ namespace InvoiceService.Repositorys
             _invoices.InsertOne(invoice);
             queue.Add(new AutoMail
             {
-                Model = new InvoiceModel(),
+                Model = invoice,
                 ReceiverMail = "heh"
             });
         }
@@ -40,7 +40,18 @@ namespace InvoiceService.Repositorys
         {
             //Seends Payment link to payment provider
 
-            throw new NotImplementedException();
+            //Dummy integration with PayPal
+            try
+            {
+                new HttpClient().PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
+            }
+            catch(Exception ex)
+            {
+                AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a PayPal payment link");
+            }
+            Task.Delay(2000);
+            
+            return $"https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/{payment.Reference}";
         }
 
         public void DeleteInvoice(string id)
@@ -64,23 +75,47 @@ namespace InvoiceService.Repositorys
         {
             // Simulate sending the invoice via a messaging system or an email service.
             // This operation would typically involve another service and not directly relate to MongoDB actions.
-            throw new NotImplementedException();
+            try
+            {
+                AutoMail mail = new AutoMail()
+                {
+                    Model = invoice,
+                    ReceiverMail = "eaajbst@students.eaaa.dk",
+                    DateTime = DateTime.Now,
+                    SenderMail = "eyo, who dis",
+                    Content = "This is your invoice, yoyo",
+                    Header = "GrønOgOlsen Invoice - Betal!"
+                };
+                queue.Add(mail);
+            }
+            catch(Exception ex)
+            {
+                AuctionCoreLogger.Logger.Fatal($"Failed to add invoice mail to mailQueue # {ex}");
+            }
         }
 
-        public void SendParcelInformation(ParcelModel parcel)
+        public string SendParcelInformation(ParcelModel parcel)
         {
-            //Sends parcel information to parcel provider
+            try
+            {
+                new HttpClient().PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
+            }
+            catch (Exception ex)
+            {
+                AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a GLS parcel delivery");
+            }
+            Task.Delay(2000);
 
-            throw new NotImplementedException();
+            return $"https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/{parcel.Reference}";
         }
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
             var update = Builders<InvoiceModel>.Update
-                            .Set(x => x.Price, newInvoiceData.Price) // Example of updating the amount
+                            .Set(x => x.Price, newInvoiceData.Price); // Example of updating the amount
                                                                        // Add other properties to update as required
-                            ;
+                            
             _invoices.UpdateOne(filter, update);
             return newInvoiceData;
         }
