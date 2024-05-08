@@ -32,7 +32,11 @@ namespace InvoiceService.Repositorys
             queue.Add(new AutoMail
             {
                 Model = invoice,
-                ReceiverMail = "heh"
+                ReceiverMail = invoice.Email,
+                DateTime = DateTime.Now,
+                SenderMail = "gronogolsen@gmail.com",
+                Content = "This is your invoice, yoyo",
+                Header = "GrønOgOlsen Invoice - Betal!"
             });
         }
 
@@ -80,9 +84,9 @@ namespace InvoiceService.Repositorys
                 AutoMail mail = new AutoMail()
                 {
                     Model = invoice,
-                    ReceiverMail = "eaajbst@students.eaaa.dk",
+                    ReceiverMail = invoice.Email,
                     DateTime = DateTime.Now,
-                    SenderMail = "eyo, who dis",
+                    SenderMail = "gronogolsen@gmail.com",
                     Content = "This is your invoice, yoyo",
                     Header = "GrønOgOlsen Invoice - Betal!"
                 };
