@@ -176,7 +176,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [HttpPost("createPaymentLink")]
+        [HttpPost("createParcelInfo")]
         public IActionResult SendParcelInformation(ParcelModel parcel)
         {
             try

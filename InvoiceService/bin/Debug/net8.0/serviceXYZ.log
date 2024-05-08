@@ -2765,3 +2765,109 @@
 2024-05-07 13:29:59.6481|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
 2024-05-07 13:29:59.6481|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
 2024-05-07 13:29:59.6605|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
+2024-05-08 10:33:50.8025|DEBUG|InvoiceService.Program|init main
+2024-05-08 10:33:55.4438|INFO|InvoiceService|Starting service
+2024-05-08 10:33:56.0150|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2024-05-08 10:33:56.2659|INFO|InvoiceService|Controllers mapped
+2024-05-08 10:33:56.2698|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting
+2024-05-08 10:33:56.4937|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-08 10:33:56.5059|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys\key-242dc688-13ea-4e37-b56d-b70a8f2befb8.xml'.
+2024-05-08 10:33:56.5366|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys\key-78ddebcb-ed06-4eed-a364-411c19170fba.xml'.
+2024-05-08 10:33:56.5749|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {242dc688-13ea-4e37-b56d-b70a8f2befb8}.
+2024-05-08 10:33:56.5749|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {78ddebcb-ed06-4eed-a364-411c19170fba}.
+2024-05-08 10:33:56.5949|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {242dc688-13ea-4e37-b56d-b70a8f2befb8} with expiration date 2024-05-13 07:30:04Z as default key.
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI.
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {242dc688-13ea-4e37-b56d-b70a8f2befb8} as the default key.
+2024-05-08 10:33:56.5992|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {242dc688-13ea-4e37-b56d-b70a8f2befb8} was loaded during application startup.
+2024-05-08 10:33:57.1714|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7241
+2024-05-08 10:33:57.1714|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5143
+2024-05-08 10:33:57.1714|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly InvoiceService
+2024-05-08 10:33:57.1714|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-05-08 10:33:57.1714|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-05-08 10:33:57.1714|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-05-08 10:33:57.1714|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-05-08 10:33:57.1714|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\JeffS\Dropbox\EAAA\4.Semester\Projekt\InvoiceService\InvoiceService
+2024-05-08 10:33:57.1714|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started
+2024-05-08 10:33:57.4053|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCG" accepted.
+2024-05-08 10:33:57.4053|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCH" accepted.
+2024-05-08 10:33:57.4053|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCG" started.
+2024-05-08 10:33:57.4053|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCH" started.
+2024-05-08 10:33:57.4303|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCH" received FIN.
+2024-05-08 10:33:57.4303|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCG" received FIN.
+2024-05-08 10:33:57.4303|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Failed to authenticate HTTPS connection.|System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-05-08 10:33:57.4303|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Failed to authenticate HTTPS connection.|System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-05-08 10:33:57.6311|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCH" stopped.
+2024-05-08 10:33:57.6311|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCG" stopped.
+2024-05-08 10:33:57.6311|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 10:33:57.6311|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 10:33:58.7428|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCI" accepted.
+2024-05-08 10:33:58.7428|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCI" started.
+2024-05-08 10:33:58.7943|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Connection 0HN3F76D6ELCI established using the following protocol: Tls13
+2024-05-08 10:33:58.9626|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - -
+2024-05-08 10:33:59.0375|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed.
+2024-05-08 10:33:59.0670|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html'
+2024-05-08 10:33:59.0670|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 10:33:59.1564|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 10:33:59.3956|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup is scheduled to include browser refresh script injection.
+2024-05-08 10:33:59.6225|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup was updated to include browser refresh script injection.
+2024-05-08 10:33:59.6225|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 663.6520ms
+2024-05-08 10:33:59.7600|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - - -
+2024-05-08 10:33:59.7600|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_vs/browserLink - - -
+2024-05-08 10:33:59.7600|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 8.8570ms
+2024-05-08 10:33:59.8448|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 82.6578ms
+2024-05-08 10:33:59.9748|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - -
+2024-05-08 10:33:59.9748|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json'
+2024-05-08 10:33:59.9748|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 10:33:59.9748|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 10:34:00.1877|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.|Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST Invoice/createPaymentLink" for actions - InvoiceService.Controllers.InvoiceController.CreatePaymentLink (InvoiceService),InvoiceService.Controllers.InvoiceController.SendParcelInformation (InvoiceService). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-08 10:34:00.2079|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 500 - text/plain;+charset=utf-8 233.1011ms
+2024-05-08 10:34:10.1599|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - -
+2024-05-08 10:34:10.1599|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html'
+2024-05-08 10:34:10.1599|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 10:34:10.1599|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 10:34:10.1599|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup is scheduled to include browser refresh script injection.
+2024-05-08 10:34:10.1599|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup was updated to include browser refresh script injection.
+2024-05-08 10:34:10.1599|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 13.7624ms
+2024-05-08 10:34:10.1865|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_vs/browserLink - - -
+2024-05-08 10:34:10.1865|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - - -
+2024-05-08 10:34:10.1924|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 1.7260ms
+2024-05-08 10:34:10.1924|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 7.8816ms
+2024-05-08 10:34:10.2651|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - -
+2024-05-08 10:34:10.2651|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json'
+2024-05-08 10:34:10.2651|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 10:34:10.2651|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 10:34:10.2875|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.|Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST Invoice/createPaymentLink" for actions - InvoiceService.Controllers.InvoiceController.CreatePaymentLink (InvoiceService),InvoiceService.Controllers.InvoiceController.SendParcelInformation (InvoiceService). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-08 10:34:10.2875|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 500 - text/plain;+charset=utf-8 33.6503ms
+2024-05-08 10:35:36.7302|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
+2024-05-08 10:35:36.7302|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3F76D6ELCI" is closing.
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3F76D6ELCI" is closed. The last processed stream ID was 15.
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCI" received FIN.
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F76D6ELCI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Http2|The connection queue processing loop for 0HN3F76D6ELCI completed.
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F76D6ELCI" stopped.
+2024-05-08 10:35:36.7400|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
