@@ -61,11 +61,11 @@ namespace InvoiceService.Test
         {
             var mockService = new Mock<IInvoiceRepository>();
 
-            mockService.Setup(s => s.DeleteInvoice(1)).Verifiable();
+            mockService.Setup(s => s.DeleteInvoice("")).Verifiable();
 
-            mockService.Object.DeleteInvoice(1);
+            mockService.Object.DeleteInvoice("");
 
-            mockService.Verify(s => s.DeleteInvoice(It.IsAny<int>()), Times.Once);
+            mockService.Verify(s => s.DeleteInvoice(It.IsAny<string>()), Times.Once);
         }
 
         [TestMethod]
@@ -89,11 +89,11 @@ namespace InvoiceService.Test
         {
             var mockService = new Mock<IInvoiceRepository>();
 
-            mockService.Setup(s => s.ValidateInvoice(1)).Verifiable();
+            mockService.Setup(s => s.ValidateInvoice("")).Verifiable();
 
-            mockService.Object.ValidateInvoice(1);
+            mockService.Object.ValidateInvoice("");
 
-            mockService.Verify(s => s.ValidateInvoice(It.IsAny<int>()), Times.Once);
+            mockService.Verify(s => s.ValidateInvoice(It.IsAny<string>()), Times.Once);
         }
 
         [TestMethod]

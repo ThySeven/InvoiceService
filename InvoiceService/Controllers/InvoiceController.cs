@@ -40,9 +40,57 @@ namespace InvoiceService.Controllers
                 _logger.LogError($"{invoice.Id} created");
                 return Ok(); // Assuming CreateInvoice returns the created invoice
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogCritical($"{JsonSerializer.Serialize(invoice)} failed to created: {ex}");
+                return BadRequest("Bad request");
+            }
+        }
+
+        [HttpGet("getById/{id}")]
+        public IActionResult GetInvoiceById(string id)
+        {
+            try
+            {
+                _invoiceRepository.GetById(id);
+                _logger.LogError($"{id} created");
+                return Ok(); // Assuming CreateInvoice returns the created invoice
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Failed to get by id: {JsonSerializer.Serialize(id)} error: {ex}");
+                return BadRequest("Bad request");
+            }
+        }
+        [HttpGet("getAll")]
+        public IActionResult GetAllInvoice()
+        {
+            try
+            {
+                var invoice = _invoiceRepository.GetAll();
+                _logger.LogError($"{invoice} created");
+                return Ok(); // Assuming CreateInvoice returns the created invoice
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Failed to get: {ex}");
+                return BadRequest("Bad request");
+            }
+        }
+
+
+        [HttpGet("validate/{id}")]
+        public IActionResult ValidateInvoice(string id)
+        {
+            try
+            {
+                _invoiceRepository.ValidateInvoice(id);
+                _logger.LogError($"{id} created");
+                return Ok(); // Assuming CreateInvoice returns the created invoice
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Failed to validate Invoice {id}: {ex}");
                 return BadRequest("Bad request");
             }
         }
@@ -72,7 +120,7 @@ namespace InvoiceService.Controllers
                 _logger.LogInformation($"{invoice.Id} updated");
                 return Ok(result); // Assuming UpdateInvoice doesn't return anything
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 _logger.LogCritical($"{JsonSerializer.Serialize(invoice)} failed to update: {ex}");
@@ -82,7 +130,7 @@ namespace InvoiceService.Controllers
         }
 
         [HttpDelete("delete/{id}")]
-        public IActionResult DeleteInvoice(int id)
+        public IActionResult DeleteInvoice(string id)
         {
             try
             {
@@ -96,5 +144,37 @@ namespace InvoiceService.Controllers
                 return BadRequest("Bad Request");
             }
         }
+        [HttpPost("createPaymentLink")]
+        public IActionResult CreatePaymentLink(PaymentModel payment)
+        {
+            try
+            {
+                _invoiceRepository.CreatePaymentLink(payment);
+                _logger.LogInformation($"{payment} sent");
+                return Ok(); // Assuming SendInvoice doesn't return anything
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"{JsonSerializer.Serialize(payment)} failed to send payment link: {ex}");
+                return BadRequest("Bad request");
+            }
+        }
+
+        [HttpPost("createPaymentLink")]
+        public IActionResult SendParcelInformation(ParcelModel parcel)
+        {
+            try
+            {
+                _invoiceRepository.SendParcelInformation(parcel);
+                _logger.LogInformation($"{parcel} sent");
+                return Ok(); // Assuming SendInvoice doesn't return anything
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"{JsonSerializer.Serialize(parcel)} failed to send parcel: {ex}");
+                return BadRequest("Bad request");
+            }
+        }
+
     }
 }

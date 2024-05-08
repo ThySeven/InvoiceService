@@ -36,7 +36,14 @@ namespace InvoiceService.Repositorys
             });
         }
 
-        public void DeleteInvoice(int id)
+        public string CreatePaymentLink(PaymentModel payment)
+        {
+            //Seends Payment link to payment provider
+
+            throw new NotImplementedException();
+        }
+
+        public void DeleteInvoice(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assuming "Id" is a property of InvoiceModel and its type is int
             _invoices.DeleteOne(filter);
@@ -60,6 +67,13 @@ namespace InvoiceService.Repositorys
             throw new NotImplementedException();
         }
 
+        public void SendParcelInformation(ParcelModel parcel)
+        {
+            //Sends parcel information to parcel provider
+
+            throw new NotImplementedException();
+        }
+
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
@@ -71,7 +85,7 @@ namespace InvoiceService.Repositorys
             return newInvoiceData;
         }
 
-        public void ValidateInvoice(int id)
+        public void ValidateInvoice(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assumption: 'Id' is the property representing the unique identifier.
             var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true); // Assuming 'PaidStatus' is the property to update.
@@ -94,6 +108,5 @@ namespace InvoiceService.Repositorys
             // If needed, you can also return some information (like a boolean indicating success or the updated document), 
             // depending on whether the method's return type is void in your original design.
         }
-
     }
 }

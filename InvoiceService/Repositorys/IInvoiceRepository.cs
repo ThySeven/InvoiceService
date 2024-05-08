@@ -9,13 +9,16 @@ namespace InvoiceService.Repository
         InvoiceModel GetById(string id);
 
         void CreateInvoice (InvoiceModel invoice);
-        void DeleteInvoice (int id);
+        void DeleteInvoice (string id);
 
         InvoiceModel UpdateInvoice(InvoiceModel invoice);
 
-        void ValidateInvoice(int id);
+        void ValidateInvoice(string id);
 
         void SendInvoice (InvoiceModel invoice);
 
+        void CreatePaymentLink(PaymentModel payment);
+
+        void SendParcelInformation(ParcelModel parcel);
     }
 }
