@@ -3057,3 +3057,68 @@
 2024-05-08 11:18:29.4623|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
 2024-05-08 11:18:29.4623|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
 2024-05-08 11:18:29.4623|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
+2024-05-08 12:14:52.5311|DEBUG|InvoiceService.Program|init main
+2024-05-08 12:14:53.5711|INFO|InvoiceService|Starting service
+2024-05-08 12:14:53.6428|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2024-05-08 12:14:53.7323|INFO|InvoiceService|Controllers mapped
+2024-05-08 12:14:53.7323|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting
+2024-05-08 12:14:53.7685|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-08 12:14:53.7849|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys\key-242dc688-13ea-4e37-b56d-b70a8f2befb8.xml'.
+2024-05-08 12:14:53.7849|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\JeffS\AppData\Local\ASP.NET\DataProtection-Keys\key-78ddebcb-ed06-4eed-a364-411c19170fba.xml'.
+2024-05-08 12:14:53.7849|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {242dc688-13ea-4e37-b56d-b70a8f2befb8}.
+2024-05-08 12:14:53.8026|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {78ddebcb-ed06-4eed-a364-411c19170fba}.
+2024-05-08 12:14:53.8228|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {242dc688-13ea-4e37-b56d-b70a8f2befb8} with expiration date 2024-05-13 07:30:04Z as default key.
+2024-05-08 12:14:53.8228|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2024-05-08 12:14:53.8228|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI.
+2024-05-08 12:14:53.8228|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2024-05-08 12:14:53.8352|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2024-05-08 12:14:53.8352|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2024-05-08 12:14:53.8352|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {242dc688-13ea-4e37-b56d-b70a8f2befb8} as the default key.
+2024-05-08 12:14:53.8352|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {242dc688-13ea-4e37-b56d-b70a8f2befb8} was loaded during application startup.
+2024-05-08 12:14:53.9676|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7241
+2024-05-08 12:14:53.9676|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5143
+2024-05-08 12:14:53.9676|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly InvoiceService
+2024-05-08 12:14:53.9676|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-05-08 12:14:53.9676|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-05-08 12:14:53.9676|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-05-08 12:14:53.9676|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-05-08 12:14:53.9676|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\JeffS\Dropbox\EAAA\4.Semester\Projekt\InvoiceService\InvoiceService
+2024-05-08 12:14:53.9676|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started
+2024-05-08 12:14:54.3124|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F8UQ9JPRT" received FIN.
+2024-05-08 12:14:54.3124|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F8UQ9JPRU" received FIN.
+2024-05-08 12:14:54.3211|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRT" accepted.
+2024-05-08 12:14:54.3211|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRU" accepted.
+2024-05-08 12:14:54.3211|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRU" started.
+2024-05-08 12:14:54.3211|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRT" started.
+2024-05-08 12:14:54.3435|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Failed to authenticate HTTPS connection.|System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-05-08 12:14:54.3435|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Failed to authenticate HTTPS connection.|System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-05-08 12:14:54.4133|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRT" stopped.
+2024-05-08 12:14:54.4133|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRU" stopped.
+2024-05-08 12:14:54.4133|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F8UQ9JPRT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 12:14:54.4133|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F8UQ9JPRU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 12:14:55.0714|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRV" accepted.
+2024-05-08 12:14:55.0714|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F8UQ9JPRV" started.
+2024-05-08 12:14:55.1263|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware|Connection 0HN3F8UQ9JPRV established using the following protocol: Tls13
+2024-05-08 12:14:55.2798|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - -
+2024-05-08 12:14:55.3538|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed.
+2024-05-08 12:14:55.4216|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html'
+2024-05-08 12:14:55.4216|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 12:14:55.5271|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 12:14:55.6916|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup is scheduled to include browser refresh script injection.
+2024-05-08 12:14:55.8358|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup was updated to include browser refresh script injection.
+2024-05-08 12:14:55.8472|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 567.2644ms
+2024-05-08 12:14:56.0393|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - - -
+2024-05-08 12:14:56.0393|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/_vs/browserLink - - -
+2024-05-08 12:14:56.0668|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 27.4314ms
+2024-05-08 12:14:56.0971|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 57.7436ms
+2024-05-08 12:14:56.3026|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - -
+2024-05-08 12:14:56.3026|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json'
+2024-05-08 12:14:56.3026|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-05-08 12:14:56.3026|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
+2024-05-08 12:14:56.5362|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 233.6307ms
