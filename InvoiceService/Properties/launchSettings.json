@@ -16,7 +16,6 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5143",
       "environmentVariables": {
-        "LokiServerName": "LokiServer",
         "LokiEndpoint": "http://localhost:3100",
         "RabbitMQHostName": "localhost",
         "RabbitMQQueueName": "invoices",
@@ -33,7 +32,6 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7241;http://localhost:5143",
       "environmentVariables": {
-        "LokiServerName": "LokiServer",
         "LokiEndpoint": "http://localhost:3100",
         "RabbitMQHostName": "localhost",
         "RabbitMQQueueName": "invoices",
