@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Detail.cs" />
+    <Compile Remove="Models\DetailModel.cs" />
     <Compile Remove="Repositorys\IInvoiceRepositorys.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Models\NewFile.txt" />
+    <None Remove="Models\Parcel" />
     <None Remove="UserService.http" />
   </ItemGroup>
 

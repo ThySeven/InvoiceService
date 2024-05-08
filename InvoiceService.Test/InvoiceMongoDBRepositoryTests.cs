@@ -15,6 +15,8 @@ namespace InvoiceService.Test
         private Mock<IMongoCollection<InvoiceModel>> mockCollection;
         private InvoiceRepository repository; // This should be the actual class being tested.
         private Mock<IAsyncCursor<InvoiceModel>> mockCursor;
+        private InvoiceModel testingInvoice = new();
+
 
         [TestInitialize]
         public void SetUp()
@@ -34,17 +36,15 @@ namespace InvoiceService.Test
         [TestMethod]
         public void CreateInvoice_InsertsInvoice()
         {
-            var invoice = new InvoiceModel {};
-            repository.CreateInvoice(invoice);
+            repository.CreateInvoice(testingInvoice);
             mockCollection.Verify(c => c.InsertOne(It.IsAny<InvoiceModel>(), null, default(CancellationToken)), Times.Once);
         }
 
         [TestMethod]
         public void DeleteInvoice_DeletesById()
         {
-            int idToRemove = 1;
 
-            repository.DeleteInvoice(idToRemove);
+            repository.DeleteInvoice(testingInvoice.Id);
 
             mockCollection.Verify(c => c.DeleteOne(It.IsAny<FilterDefinition<InvoiceModel>>(), default), Times.Once);
         }
@@ -90,11 +90,10 @@ namespace InvoiceService.Test
         [ExpectedException(typeof(KeyNotFoundException))]
         public void ValidateInvoice_ThrowsWhenNotFound()
         {
-            int invoiceId = 1;
             mockCollection.Setup(x => x.UpdateOne(It.IsAny<FilterDefinition<InvoiceModel>>(), It.IsAny<UpdateDefinition<InvoiceModel>>(), It.IsAny<UpdateOptions>(), default))
                           .Returns(new UpdateResult.Acknowledged(0, 0, null));
 
-            repository.ValidateInvoice(invoiceId);
+            repository.ValidateInvoice(testingInvoice.Id);
         }
 
         private void SetUpCursor(List<InvoiceModel> data)

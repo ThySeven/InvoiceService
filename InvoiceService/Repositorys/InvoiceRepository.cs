@@ -31,12 +31,30 @@ namespace InvoiceService.Repositorys
             _invoices.InsertOne(invoice);
             queue.Add(new AutoMail
             {
-                Model = new InvoiceModel(),
+                Model = invoice,
                 ReceiverMail = "heh"
             });
         }
 
-        public void DeleteInvoice(int id)
+        public string CreatePaymentLink(PaymentModel payment)
+        {
+            //Seends Payment link to payment provider
+
+            //Dummy integration with PayPal
+            try
+            {
+                new HttpClient().PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
+            }
+            catch(Exception ex)
+            {
+                AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a PayPal payment link");
+            }
+            Task.Delay(2000);
+            
+            return $"https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/{payment.Reference}";
+        }
+
+        public void DeleteInvoice(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assuming "Id" is a property of InvoiceModel and its type is int
             _invoices.DeleteOne(filter);
@@ -57,21 +75,52 @@ namespace InvoiceService.Repositorys
         {
             // Simulate sending the invoice via a messaging system or an email service.
             // This operation would typically involve another service and not directly relate to MongoDB actions.
-            throw new NotImplementedException();
+            try
+            {
+                AutoMail mail = new AutoMail()
+                {
+                    Model = invoice,
+                    ReceiverMail = "eaajbst@students.eaaa.dk",
+                    DateTime = DateTime.Now,
+                    SenderMail = "eyo, who dis",
+                    Content = "This is your invoice, yoyo",
+                    Header = "GrønOgOlsen Invoice - Betal!"
+                };
+                queue.Add(mail);
+            }
+            catch(Exception ex)
+            {
+                AuctionCoreLogger.Logger.Fatal($"Failed to add invoice mail to mailQueue # {ex}");
+            }
+        }
+
+        public string SendParcelInformation(ParcelModel parcel)
+        {
+            try
+            {
+                new HttpClient().PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
+            }
+            catch (Exception ex)
+            {
+                AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a GLS parcel delivery");
+            }
+            Task.Delay(2000);
+
+            return $"https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/{parcel.Reference}";
         }
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
             var update = Builders<InvoiceModel>.Update
-                            .Set(x => x.Price, newInvoiceData.Price) // Example of updating the amount
+                            .Set(x => x.Price, newInvoiceData.Price); // Example of updating the amount
                                                                        // Add other properties to update as required
-                            ;
+                            
             _invoices.UpdateOne(filter, update);
             return newInvoiceData;
         }
 
-        public void ValidateInvoice(int id)
+        public void ValidateInvoice(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assumption: 'Id' is the property representing the unique identifier.
             var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true); // Assuming 'PaidStatus' is the property to update.
@@ -94,6 +143,5 @@ namespace InvoiceService.Repositorys
             // If needed, you can also return some information (like a boolean indicating success or the updated document), 
             // depending on whether the method's return type is void in your original design.
         }
-
     }
 }
