@@ -3049,3 +3049,11 @@
 2024-05-08 11:01:46.3509|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
 2024-05-08 11:01:46.3509|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated.
 2024-05-08 11:01:46.5241|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 167.2191ms
+2024-05-08 11:01:56.2444|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F7LU6E12K" received FIN.
+2024-05-08 11:01:56.2444|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3F7LU6E12K" is closed. The last processed stream ID was 1.
+2024-05-08 11:01:56.2444|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN3F7LU6E12K" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-05-08 11:01:56.2444|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Http2|The connection queue processing loop for 0HN3F7LU6E12K completed.
+2024-05-08 11:01:56.2444|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN3F7LU6E12K" stopped.
+2024-05-08 11:18:29.4623|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
+2024-05-08 11:18:29.4623|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
+2024-05-08 11:18:29.4623|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
