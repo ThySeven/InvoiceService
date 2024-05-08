@@ -87,7 +87,7 @@ namespace InvoiceService.Repositorys
                     ReceiverMail = invoice.Email,
                     DateTime = DateTime.Now,
                     SenderMail = "gronogolsen@gmail.com",
-                    Content = "This is your invoice, yoyo<br /><div style=\"width:80%\"><img src=\"https://scontent.fcph5-1.fna.fbcdn.net/v/t39.30808-6/441581511_122119243322268251_1448493491287892658_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-VTGA480g0wQ7kNvgHL17tx&_nc_ht=scontent.fcph5-1.fna&oh=00_AfByCTIrUM68fw6glkx6O91BGt3wSw3TLbs-G0nfwTNIeA&oe=664128F4\"/></div>",
+                    Content = "This is your invoice, yoyo<br /><img src=\"https://scontent.fcph5-1.fna.fbcdn.net/v/t39.30808-6/441856076_122119247390268251_6872370368606673835_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kumg7n8kOKsQ7kNvgE--SRI&_nc_ht=scontent.fcph5-1.fna&oh=00_AfAofBAZoBPMHwwfex41mYJO0_s_qnRfTl91buhLlmz3MQ&oe=664113D0\"/>",
                     Header = "GrønOgOlsen Invoice - Betal!"
                 };
                 queue.Add(mail);
