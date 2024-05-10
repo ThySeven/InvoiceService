@@ -9,7 +9,7 @@
   <ItemGroup>
     <Compile Remove="Models\Detail.cs" />
     <Compile Remove="Models\DetailModel.cs" />
-    <Compile Remove="Repositorys\IInvoiceRepositorys.cs" />
+    <Compile Remove="Repositories\IInvoiceRepositories.cs" />
   </ItemGroup>
 
   <ItemGroup>

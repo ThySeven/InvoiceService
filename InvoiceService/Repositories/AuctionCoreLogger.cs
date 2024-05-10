@@ -1,7 +1,7 @@
 ﻿using NLog;
 using ILogger = NLog.ILogger;
 
-namespace InvoiceService.Repositorys
+namespace InvoiceService.Repositories
 {
     public class AuctionCoreLogger
     {

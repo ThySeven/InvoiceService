@@ -4,7 +4,7 @@ using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
 
-namespace InvoiceService.Repositorys
+namespace InvoiceService.Repositories
 {
     public class RabbitMQueue : IAuctionCoreQueue
     {
@@ -29,7 +29,7 @@ namespace InvoiceService.Repositorys
             consumer = new EventingBasicConsumer(channel);
         }
 
-        public void Add(AutoMail mail)
+        public void Add(MailModel mail)
         {
             try
             {

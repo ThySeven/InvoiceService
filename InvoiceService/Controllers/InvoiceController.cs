@@ -1,6 +1,6 @@
 ﻿using InvoiceService.Models;
 using Microsoft.AspNetCore.Mvc;
-using InvoiceService.Repositorys;
+using InvoiceService.Repositories;
 using InvoiceService.Repository;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
