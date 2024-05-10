@@ -1,5 +1,5 @@
 using InvoiceService.Repository;
-using InvoiceService.Repositorys;
+using InvoiceService.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using NLog;

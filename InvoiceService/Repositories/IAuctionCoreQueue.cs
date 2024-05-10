@@ -1,9 +1,9 @@
 ﻿using InvoiceService.Models;
 
-namespace InvoiceService.Repositorys
+namespace InvoiceService.Repositories
 {
     public interface IAuctionCoreQueue
     {
-        void Add(AutoMail mail);
+        void Add(MailModel mail);
     }
 }
