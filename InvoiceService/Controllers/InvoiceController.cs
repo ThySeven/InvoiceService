@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using NLog;
 using NLog.Web;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InvoiceService.Controllers
 {
@@ -31,6 +32,7 @@ namespace InvoiceService.Controllers
             _logger.LogDebug(1, $"XYZ Service responding from {_ipaddr}");
         }
 
+        [Authorize]
         [HttpPost("create")]
         public IActionResult CreateInvoice(InvoiceModel invoice)
         {
@@ -41,7 +43,7 @@ namespace InvoiceService.Controllers
                     Price = invoice.Price,
                     CurrencyCode = "DKK",
                     InvoiceNumber = invoice.Id,
-                    Reference = "Ref987654",
+                    Reference = invoice.Id,
                     InvoiceDate = DateTime.Now,
                     Note = "Payment for software subscription.",
                     Term = "Net 30",
@@ -60,6 +62,7 @@ namespace InvoiceService.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("getById/{id}")]
         public IActionResult GetInvoiceById(string id)
         {
@@ -75,6 +78,8 @@ namespace InvoiceService.Controllers
                 return BadRequest("Bad request");
             }
         }
+
+        [Authorize]
         [HttpGet("getAll")]
         public IActionResult GetAllInvoice()
         {
@@ -91,7 +96,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("validate/{id}")]
         public IActionResult ValidateInvoice(string id, ParcelModel parcel)
         {
@@ -110,6 +115,7 @@ namespace InvoiceService.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("send")]
         public IActionResult SendInvoice(InvoiceModel invoice)
         {
@@ -126,6 +132,7 @@ namespace InvoiceService.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut("update")]
         public IActionResult UpdateInvoice(InvoiceModel invoice)
         {
@@ -144,6 +151,7 @@ namespace InvoiceService.Controllers
 
         }
 
+        [Authorize]
         [HttpDelete("delete/{id}")]
         public IActionResult DeleteInvoice(string id)
         {
@@ -160,6 +168,8 @@ namespace InvoiceService.Controllers
                 return BadRequest("Bad Request");
             }
         }
+
+        [Authorize]
         [HttpPost("createPaymentLink")]
         public IActionResult CreatePaymentLink(PaymentModel payment)
         {
@@ -176,6 +186,7 @@ namespace InvoiceService.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("createParcelInfo")]
         public IActionResult SendParcelInformation(ParcelModel parcel)
         {
