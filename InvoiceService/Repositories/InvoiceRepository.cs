@@ -1,5 +1,6 @@
 ﻿using InvoiceService.Models;
 using InvoiceService.Repository;
+using InvoiceService.Services;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
 using System;
@@ -57,7 +58,7 @@ namespace InvoiceService.Repositories
             //Dummy integration with PayPal
             try
             {
-                new HttpClient().PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
+                WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
             }
             catch(Exception ex)
             {
@@ -109,7 +110,7 @@ namespace InvoiceService.Repositories
         {
             try
             {
-                new HttpClient().PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
+                WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
             }
             catch (Exception ex)
             {
