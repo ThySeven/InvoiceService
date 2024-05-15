@@ -53,9 +53,6 @@ namespace InvoiceService.Repositories
 
         public string CreatePaymentLink(PaymentModel payment)
         {
-            //Seends Payment link to payment provider
-
-            //Dummy integration with PayPal
             try
             {
                 WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
@@ -71,7 +68,7 @@ namespace InvoiceService.Repositories
 
         public void DeleteInvoice(string id)
         {
-            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assuming "Id" is a property of InvoiceModel and its type is int
+            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
             _invoices.DeleteOne(filter);
         }
 
@@ -88,8 +85,6 @@ namespace InvoiceService.Repositories
 
         public void SendInvoice(InvoiceModel invoice)
         {
-            // Simulate sending the invoice via a messaging system or an email service.
-            // This operation would typically involve another service and not directly relate to MongoDB actions.
             try
             {
                 MailModel mail = new MailModel()
@@ -125,8 +120,7 @@ namespace InvoiceService.Repositories
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
             var update = Builders<InvoiceModel>.Update
-                            .Set(x => x.Price, newInvoiceData.Price); // Example of updating the amount
-                                                                       // Add other properties to update as required
+                            .Set(x => x.Price, newInvoiceData.Price); 
                             
             _invoices.UpdateOne(filter, update);
             return newInvoiceData;
@@ -134,26 +128,17 @@ namespace InvoiceService.Repositories
 
         public void ValidateInvoice(string id)
         {
-            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assumption: 'Id' is the property representing the unique identifier.
-            var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true); // Assuming 'PaidStatus' is the property to update.
+            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
+            var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true);
 
             var result = _invoices.UpdateOne(filter, update);
-
-            // Optionally, check the result to see if the update was successful
+            
             if (result.MatchedCount == 0)
             {
-                // Handle the case where no document was found with the provided id.
-                // For example, you could throw a NotFoundException or handle it as you see fit.
                 throw new KeyNotFoundException($"No invoice found with ID {id}.");
             }
-            else if (result.ModifiedCount == 0)
-            {
-                // Handle the case where the document was found, but not modified,
-                // which could happen if the invoice was already marked as paid.
-                // This might not require an action, but you can log this situation or handle it as needed.
-            }
-            // If needed, you can also return some information (like a boolean indicating success or the updated document), 
-            // depending on whether the method's return type is void in your original design.
+            
+            AuctionCoreLogger.Logger.Info($"Invoice validated with id: {id}");
         }
     }
 }
