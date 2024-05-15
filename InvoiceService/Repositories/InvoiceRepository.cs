@@ -147,9 +147,9 @@ namespace InvoiceService.Repositories
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
             var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true);
 
-            var result = _invoices.UpdateOne(filter, update);
+            _invoices.UpdateOne(filter, update);
             
-            if (result.MatchedCount == 0)
+            if (_invoices.UpdateOne(filter, update).MatchedCount == 0)
             {
                 throw new KeyNotFoundException($"No invoice found with ID {id}.");
             }
