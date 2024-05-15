@@ -47,7 +47,7 @@ namespace InvoiceService.Repositories
             {
                 ReceiverMail = invoice.Email,
                 Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
-                Header = mail.Header + DateTime.Now.Ticks
+                Header = mail.Header
             });
         }
 
@@ -90,8 +90,8 @@ namespace InvoiceService.Repositories
                 MailModel mail = new MailModel()
                 {
                     ReceiverMail = invoice.Email,
-                    Content = this.mail.Content,
-                    Header = this.mail.Header + DateTime.Now.Ticks
+                    Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
+                    Header = this.mail.Header
                 };
                 queue.Add(mail);
             }
@@ -118,10 +118,27 @@ namespace InvoiceService.Repositories
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
+            var currentInvoice = GetById(newInvoiceData.Id);
+
+            if (newInvoiceData.PaidStatus == default)
+                newInvoiceData.PaidStatus = currentInvoice.PaidStatus;
+            if (newInvoiceData.Price == default)
+                newInvoiceData.Price = currentInvoice.Price;
+            if (string.IsNullOrEmpty(newInvoiceData.Description))
+                newInvoiceData.Description = currentInvoice.Description;
+            if (string.IsNullOrEmpty(newInvoiceData.Address))
+                newInvoiceData.Address = currentInvoice.Address;
+            if (string.IsNullOrEmpty(newInvoiceData.Email))
+                newInvoiceData.Email = currentInvoice.Email;
+
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
             var update = Builders<InvoiceModel>.Update
-                            .Set(x => x.Price, newInvoiceData.Price); 
-                            
+                .Set(x => x.PaidStatus, newInvoiceData.PaidStatus)
+                .Set(x => x.Price, newInvoiceData.Price)
+                .Set(x => x.Description, newInvoiceData.Description)
+                .Set(x => x.Address, newInvoiceData.Address)
+                .Set(x => x.Email, newInvoiceData.Email);
+
             _invoices.UpdateOne(filter, update);
             return newInvoiceData;
         }

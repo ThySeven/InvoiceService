@@ -422,15 +422,15 @@ C:/Users/JeffS/Dropbox/EAAA/4.Semester/Projekt/InvoiceService/InvoiceService.Tes
 C:/Users/JeffS/Dropbox/EAAA/4.Semester/Projekt/InvoiceService/InvoiceService.Test/obj/Debug/net8.0/InvoiceService.Test.genruntimeconfig.cache
 C:/Users/JeffS/Dropbox/EAAA/4.Semester/Projekt/InvoiceService/InvoiceService.Test/obj/Debug/net8.0/ref/InvoiceService.Test.dll
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/CoverletSourceRootsMapping_InvoiceService.Test
-/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.TestPlatform.AdapterUtilities.dll
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService.deps.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService.runtimeconfig.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/NLog.config
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/appsettings.Development.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/appsettings.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService
+/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/Microsoft.TestPlatform.AdapterUtilities.dll
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService.Test.deps.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService.Test.runtimeconfig.json
 /Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/bin/Debug/net8.0/InvoiceService.Test.dll

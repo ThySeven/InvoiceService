@@ -94,13 +94,11 @@ namespace InvoiceService.Controllers
 
         [Authorize]
         [HttpGet("validate/{id}")]
-        public IActionResult ValidateInvoice(string id, ParcelModel parcel)
+        public IActionResult ValidateInvoice(string id)
         {
             try
             {
                 _invoiceRepository.ValidateInvoice(id);
-                _invoiceRepository.SendParcelInformation(parcel);
-
                 _logger.LogInformation($"Parcel validated: {id}");
                 return Ok();
             }
@@ -144,7 +142,6 @@ namespace InvoiceService.Controllers
                 _logger.LogCritical($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
                 return BadRequest($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
             }
-
         }
 
         [Authorize]
