@@ -45,9 +45,9 @@ namespace InvoiceService.Controllers
                     InvoiceNumber = invoice.Id,
                     Reference = invoice.Id,
                     InvoiceDate = DateTime.Now,
-                    Note = "Payment for software subscription.",
+                    Note = invoice.Description,
                     Term = "Net 30",
-                    Memo = "Paid via online bank transfer."
+                    Memo = "Payment Via PalPay."
                 };
                 _invoiceRepository.CreateInvoice(invoice);
                 _logger.LogInformation($"{invoice.Id} created");

@@ -103,7 +103,7 @@
 
 <div class=""signature"">
   <p>Authorized Signature</p>
-  <img src=""https://scontent.fcph5-1.fna.fbcdn.net/v/t39.30808-6/441856076_122119247390268251_6872370368606673835_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kumg7n8kOKsQ7kNvgE--SRI&_nc_ht=scontent.fcph5-1.fna&oh=00_AfAofBAZoBPMHwwfex41mYJO0_s_qnRfTl91buhLlmz3MQ&oe=664113D0"" alt=""Signature"">
+  <img src=""https://raw.githubusercontent.com/ThySeven/MailService/main/Images/2024_05_08_0lp_Kleki.png"" alt=""Signature"">
   <p>Kell Olsen, CEO</p>
 </div>
 
