@@ -132,13 +132,12 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                var result = _invoiceRepository.UpdateInvoice(invoice);
+                _invoiceRepository.UpdateInvoice(invoice);
                 _logger.LogInformation($"Invoice updated with id: {invoice.Id}");
                 return Ok($"Invoice updated with id: {invoice.Id}");
             }
             catch (Exception ex)
             {
-
                 _logger.LogCritical($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
                 return BadRequest($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
             }

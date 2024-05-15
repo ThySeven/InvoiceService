@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 namespace InvoiceService.Repositories
 {
     public class InvoiceRepository : IInvoiceRepository
@@ -13,11 +14,6 @@ namespace InvoiceService.Repositories
         private readonly IMongoCollection<InvoiceModel> _invoices;
         private string _connectionString = Environment.GetEnvironmentVariable("MongoDBConnectionString");
         IAuctionCoreQueue queue;
-
-        InvoiceModel dummyInvoice = new()
-        {
-            Email = "sido.welat@gmail.com"
-        };
 
         MailModel mail;
 
@@ -27,11 +23,12 @@ namespace InvoiceService.Repositories
             var client = new MongoClient(_connectionString);
             var database = client.GetDatabase("AuctionCoreServices");
             _invoices = database.GetCollection<InvoiceModel>("Invoices");
+
             mail = new MailModel()
             {
                 Header = "GrønOgOlsen Invoice - Betal!",
-                Content = (new InvoiceHtmlModel(dummyInvoice)).HtmlContent,
-                ReceiverMail = dummyInvoice.Email
+                Content = (new InvoiceHtmlModel(new InvoiceModel { Email = "customer@example.com" })).HtmlContent,
+                ReceiverMail = "customer@example.com"
             };
         }
         public InvoiceRepository(IMongoDatabase db)
@@ -80,7 +77,7 @@ namespace InvoiceService.Repositories
         public InvoiceModel GetById(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
-            return _invoices.Find(filter).SingleOrDefault();
+            return _invoices.Find(filter).FirstOrDefault();
         }
 
         public void SendInvoice(InvoiceModel invoice)
@@ -118,7 +115,9 @@ namespace InvoiceService.Repositories
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
-            var currentInvoice = GetById(newInvoiceData.Id);
+            InvoiceModel currentInvoice = GetById(newInvoiceData.Id);
+
+            Console.WriteLine(JsonSerializer.Serialize(currentInvoice));
 
             if (newInvoiceData.PaidStatus == default)
                 newInvoiceData.PaidStatus = currentInvoice.PaidStatus;

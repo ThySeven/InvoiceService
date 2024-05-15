@@ -4251,33 +4251,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/nicolajorluff/.nuget/packages/": {}
+    "C:\\Users\\nicol\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/InvoiceService.Test.csproj",
+      "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
       "projectName": "InvoiceService.Test",
-      "projectPath": "/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/InvoiceService.Test.csproj",
-      "packagesPath": "/Users/nicolajorluff/.nuget/packages/",
-      "outputPath": "/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService.Test/obj/",
+      "projectPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
+      "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/nicolajorluff/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService/InvoiceService.csproj": {
-              "projectPath": "/Users/nicolajorluff/Documents/IT-Arkitektur/4. Semester/Projekt/InvoiceService/InvoiceService/InvoiceService.csproj"
+            "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj": {
+              "projectPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj"
             }
           }
         }
@@ -4286,6 +4287,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4329,7 +4335,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

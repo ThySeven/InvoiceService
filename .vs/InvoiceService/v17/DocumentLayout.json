@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\",
+  "WorkspaceRootPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|c:\\users\\nicol\\onedrive\\dokumenter\\code\\projekt-4sem\\invoiceservice\\invoiceservice\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|solutionrelative:invoiceservice\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\invoiceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\invoiceservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|c:\\users\\nicol\\onedrive\\dokumenter\\code\\projekt-4sem\\invoiceservice\\invoiceservice\\models\\invoicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|solutionrelative:invoiceservice\\models\\invoicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|c:\\users\\nicol\\onedrive\\dokumenter\\code\\projekt-4sem\\invoiceservice\\invoiceservice\\repositories\\iinvoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|solutionrelative:invoiceservice\\repositories\\iinvoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06058640-7082-47AD-9720-6A282C83EF19}|InvoiceService.Test\\InvoiceService.Test.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\invoiceservice.test\\invoicemongodbrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06058640-7082-47AD-9720-6A282C83EF19}|InvoiceService.Test\\InvoiceService.Test.csproj|solutionrelative:invoiceservice.test\\invoicemongodbrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\repositorys\\invoicemongosqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\repositorys\\invoicemongosqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|c:\\users\\bruger\\source\\repos\\invoiceservice\\userservice\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|UserService\\InvoiceService.csproj|solutionrelative:userservice\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|c:\\users\\nicol\\onedrive\\dokumenter\\code\\projekt-4sem\\invoiceservice\\invoiceservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F2FE4DC-D04E-439E-A121-2BC6BB274896}|InvoiceService\\InvoiceService.csproj|solutionrelative:invoiceservice\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,77 +34,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IInvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Repositories\\IInvoiceRepository.cs",
+              "RelativeDocumentMoniker": "InvoiceService\\Repositories\\IInvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Repositories\\IInvoiceRepository.cs",
+              "RelativeToolTip": "InvoiceService\\Repositories\\IInvoiceRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T16:08:46.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InvoiceService",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\InvoiceService.csproj",
-              "RelativeDocumentMoniker": "UserService\\InvoiceService.csproj",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\InvoiceService.csproj",
-              "RelativeToolTip": "UserService\\InvoiceService.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-07T09:20:03.278Z",
+              "Title": "InvoiceModel.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Models\\InvoiceModel.cs",
+              "RelativeDocumentMoniker": "InvoiceService\\Models\\InvoiceModel.cs",
+              "ToolTip": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Models\\InvoiceModel.cs",
+              "RelativeToolTip": "InvoiceService\\Models\\InvoiceModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T15:47:59.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Repositories\\InvoiceRepository.cs",
+              "RelativeDocumentMoniker": "InvoiceService\\Repositories\\InvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Repositories\\InvoiceRepository.cs",
+              "RelativeToolTip": "InvoiceService\\Repositories\\InvoiceRepository.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAwwHcAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T15:31:13.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "InvoiceMongoDBRepositoryTests.cs",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
-              "RelativeDocumentMoniker": "InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
-              "RelativeToolTip": "InvoiceService.Test\\InvoiceMongoDBRepositoryTests.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAmwB4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:58:22.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvoiceMongoSQLRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
-              "RelativeDocumentMoniker": "UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
-              "RelativeToolTip": "UserService\\Repositorys\\InvoiceMongoSQLRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:58:13.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TestController.cs",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\TestController.cs",
-              "RelativeDocumentMoniker": "UserService\\Controllers\\TestController.cs",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\TestController.cs",
-              "RelativeToolTip": "UserService\\Controllers\\TestController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:56:32.413Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "InvoiceController.cs",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\InvoiceController.cs",
-              "RelativeDocumentMoniker": "UserService\\Controllers\\InvoiceController.cs",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\InvoiceController.cs",
-              "RelativeToolTip": "UserService\\Controllers\\InvoiceController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAUwCYAAAAJAAAA",
+              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Controllers\\InvoiceController.cs",
+              "RelativeDocumentMoniker": "InvoiceService\\Controllers\\InvoiceController.cs",
+              "ToolTip": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\Controllers\\InvoiceController.cs",
+              "RelativeToolTip": "InvoiceService\\Controllers\\InvoiceController.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAowIIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:54:29Z",
+              "WhenOpened": "2024-05-15T15:18:40.54Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "UserService\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Bruger\\source\\repos\\InvoiceService\\UserService\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "UserService\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABkAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:54:20.473Z"
             }
           ]
         },
@@ -120,10 +90,6 @@
           "DockedWidth": 637,
           "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
