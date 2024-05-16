@@ -77,7 +77,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>{invoice.Description}</td>
+      <tdcolspan=""2"">{invoice.Description}</td>
       <td>{invoice.Price} DKK</td>
     </tr>
     <tr>
