@@ -89,8 +89,8 @@ namespace InvoiceService.Controllers
             try
             {
                 _invoiceRepository.ValidateInvoice(id);
-                _logger.LogInformation($"Parcel validated: {id}");
-                return Ok();
+                _logger.LogInformation($"Invoice validated with id {id}");
+                return Ok($"Invoice validated with id {id}");
             }
             catch (Exception ex)
             {

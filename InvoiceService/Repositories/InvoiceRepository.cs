@@ -70,13 +70,13 @@ namespace InvoiceService.Repositories
                 link = await (await WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment)).Content.ReadAsStringAsync();
                 if (string.IsNullOrEmpty(link))
                 {
-                    link = $"{Environment.GetEnvironmentVariable("PublicIP")}/validate/{payment.InvoiceNumber}";
+                    link = $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/validate/{payment.InvoiceNumber}";
                 }
             }
             catch(Exception ex)
             {
                 AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a PayPal payment link");
-                link = $"{Environment.GetEnvironmentVariable("PublicIP")}/validate/{payment.InvoiceNumber}";
+                link = $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/validate/{payment.InvoiceNumber}";
             }
             Task.Delay(2000);
 
