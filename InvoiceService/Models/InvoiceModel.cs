@@ -1,4 +1,6 @@
-﻿namespace InvoiceService.Models
+﻿using System;
+
+namespace InvoiceService.Models
 {
     public class InvoiceModel
     {

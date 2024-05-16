@@ -1,4 +1,6 @@
-﻿using InvoiceService.Models;
+﻿using System;
+using System.Linq;
+using InvoiceService.Models;
 using Microsoft.AspNetCore.Mvc;
 using InvoiceService.Repositories;
 using InvoiceService.Repository;
@@ -184,9 +186,8 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                _invoiceRepository.SendParcelInformation(parcel);
                 _logger.LogInformation($"Parcelinfo sent: {parcel}");
-                return Ok();
+                return Ok(_invoiceRepository.SendParcelInformation(parcel));
             }
             catch (Exception ex)
             {
