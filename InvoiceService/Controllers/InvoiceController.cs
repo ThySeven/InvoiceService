@@ -34,7 +34,7 @@ namespace InvoiceService.Controllers
             _logger.LogDebug(1, $"XYZ Service responding from {_ipaddr}");
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPost("create")]
         public IActionResult CreateInvoice(InvoiceModel invoice)
         {
@@ -64,7 +64,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpGet("getById/{id}")]
         public IActionResult GetInvoiceById(string id)
         {
@@ -79,7 +79,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpGet("getAll")]
         public IActionResult GetAllInvoice()
         {
@@ -94,7 +94,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpGet("validate/{id}")]
         public IActionResult ValidateInvoice(string id)
         {
@@ -111,7 +111,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPost("send")]
         public IActionResult SendInvoice(InvoiceModel invoice)
         {
@@ -128,7 +128,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPut("update")]
         public IActionResult UpdateInvoice(InvoiceModel invoice)
         {
@@ -145,7 +145,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpDelete("delete/{id}")]
         public IActionResult DeleteInvoice(string id)
         {
@@ -163,7 +163,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPost("createPaymentLink")]
         public IActionResult CreatePaymentLink(PaymentModel payment)
         {
@@ -180,7 +180,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPost("createParcelInfo")]
         public IActionResult SendParcelInformation(ParcelModel parcel)
         {
