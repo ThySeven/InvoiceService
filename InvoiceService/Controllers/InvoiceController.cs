@@ -82,7 +82,7 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize(Policy = "InternalRequestPolicy")]
+        [AllowAnonymous]
         [HttpGet("validate/{id}")]
         public IActionResult ValidateInvoice(string id)
         {
