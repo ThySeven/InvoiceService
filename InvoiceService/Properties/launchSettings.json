@@ -23,7 +23,8 @@
         "VAULT_IP": "https://localhost:8201",
         "VAULT_SECRET": "1a2b3c4d-5e6f-7g8h-9i0j-123456789abc",
         "MongoDBConnectionString": "mongodb://admin:1234@localhost:27018",
-        "GrafanaHostname": "invoiceservice"
+        "GrafanaHostname": "invoiceservice",
+        "PublicIP": "http://localhost:5143"
       }
     },
     "https": {
@@ -40,7 +41,9 @@
         "VAULT_IP": "https://localhost:8201",
         "VAULT_SECRET": "1a2b3c4d-5e6f-7g8h-9i0j-123456789abc",
         "MongoDBConnectionString": "mongodb://admin:1234@localhost:27018",
-        "GrafanaHostname": "invoiceservice"
+        "GrafanaHostname": "invoiceservice",
+        "PublicIP": "https://localhost:7241"
+
       }
     },
     "IIS Express": {

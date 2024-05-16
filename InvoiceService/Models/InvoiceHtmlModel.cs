@@ -4,11 +4,8 @@
     {
         private string htmlContent;
 
-        public InvoiceHtmlModel(InvoiceModel invoice)
+        public InvoiceHtmlModel(InvoiceModel invoice, string paymentUrl)
         {
-
-
-
             htmlContent = @"<!DOCTYPE html>
 <html lang=""en"">
 <head>
@@ -51,6 +48,20 @@
     text-align: right;
     margin-top: 20px;
   }
+  .pay-now-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+  }
+  .pay-now-btn:hover {
+    background-color: #218838;
+  }
 </style>
 </head>
 <body>
@@ -91,11 +102,15 @@
   <h2>Total Due: {invoice.Price} DKK</h2>
 </div>
 
+<a href=""{paymentUrl}"" class=""pay-now-btn"">Pay Now</a>
+
+
 <div class=""signature"">
   <p>Authorized Signature</p>
   <img src=""https://raw.githubusercontent.com/ThySeven/MailService/main/Images/2024_05_08_0lp_Kleki.png"" alt=""Signature"">
   <p>Kell Olsen, CEO</p>
 </div>
+
 
 </body>
 </html>";
