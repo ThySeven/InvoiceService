@@ -65,7 +65,7 @@
 <div class=""invoice-details"">
   <h2>Invoice #{invoice.Id}</h2>
   <p>Invoice Date: {invoice.CreatedAt}</p>
-  <p>Due Date: {invoice.CreatedAt.AddDays(3).ToLongDateString()}</p>
+  <p>Due Date: {invoice.CreatedAt.AddDays(3).ToString("dd/MM/yyyy")}</p>
 </div>
 
 <table>
