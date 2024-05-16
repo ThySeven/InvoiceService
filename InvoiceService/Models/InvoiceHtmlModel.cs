@@ -6,7 +6,7 @@
 
         public InvoiceHtmlModel(InvoiceModel invoice)
         {
-        
+
 
 
             htmlContent = @"<!DOCTYPE html>
@@ -54,7 +54,7 @@
 </style>
 </head>
 <body>
-
+" + @$"
 <div class=""company-address"">
   <h2>Grøn & Olsen</h2>
   <p>Sønderhøj 30, 8260 Viby J</p>
@@ -63,42 +63,32 @@
 </div>
 
 <div class=""invoice-details"">
-  <h2>Invoice #12345</h2>
-  <p>Invoice Date: 2024-05-07</p>
-  <p>Due Date: 2024-05-09</p>
+  <h2>Invoice #{invoice.Id}</h2>
+  <p>Invoice Date: {invoice.CreatedAt}</p>
+  <p>Due Date: {invoice.CreatedAt.AddDays(3)}</p>
 </div>
 
 <table>
   <thead>
     <tr>
       <th>Description</th>
-      <th>Quantity</th>
       <th>Price</th>
-      <th>Total</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Havetraktor</td>
-      <td>2</td>
-      <td>$100.00</td>
-      <td>$200.00</td>
-    </tr>
-    <tr>
-      <td>Bagger 293</td>
-      <td>5</td>
-      <td>$20.00</td>
-      <td>$100.00</td>
+      <td>{invoice.Description}</td>
+      <td>{invoice.Price} DKK</td>
     </tr>
     <tr>
       <td colspan=""3"" style=""text-align:right;""><strong>Grand Total</strong></td>
-      <td><strong>$300.00</strong></td>
+      <td><strong>{invoice.Price} DKK</strong></td>
     </tr>
   </tbody>
 </table>
 
 <div class=""total-amount"">
-  <h2>Total Due: $300.00</h2>
+  <h2>Total Due: {invoice.Price} DKK</h2>
 </div>
 
 <div class=""signature"">
