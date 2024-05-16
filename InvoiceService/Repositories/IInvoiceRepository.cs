@@ -1,4 +1,5 @@
-﻿using InvoiceService.Models;
+﻿using System.Collections.Generic;
+using InvoiceService.Models;
 
 namespace InvoiceService.Repository
 {
