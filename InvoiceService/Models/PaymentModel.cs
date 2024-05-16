@@ -3,7 +3,7 @@
 {
     public class PaymentModel 
     {
-        public double Price { get; set; } 
+        public double? Price { get; set; } 
         public string CurrencyCode { get; set; }
         
         public string InvoiceNumber { get; set; }

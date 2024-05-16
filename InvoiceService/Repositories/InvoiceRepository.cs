@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 namespace InvoiceService.Repositories
 {
     public class InvoiceRepository : IInvoiceRepository
@@ -13,11 +14,6 @@ namespace InvoiceService.Repositories
         private readonly IMongoCollection<InvoiceModel> _invoices;
         private string _connectionString = Environment.GetEnvironmentVariable("MongoDBConnectionString");
         IAuctionCoreQueue queue;
-
-        InvoiceModel dummyInvoice = new()
-        {
-            Email = "sido.welat@gmail.com"
-        };
 
         MailModel mail;
 
@@ -27,11 +23,12 @@ namespace InvoiceService.Repositories
             var client = new MongoClient(_connectionString);
             var database = client.GetDatabase("AuctionCoreServices");
             _invoices = database.GetCollection<InvoiceModel>("Invoices");
+
             mail = new MailModel()
             {
                 Header = "GrønOgOlsen Invoice - Betal!",
-                Content = (new InvoiceHtmlModel(dummyInvoice)).HtmlContent,
-                ReceiverMail = dummyInvoice.Email
+                Content = (new InvoiceHtmlModel(new InvoiceModel { Email = "customer@example.com" })).HtmlContent,
+                ReceiverMail = "customer@example.com"
             };
         }
         public InvoiceRepository(IMongoDatabase db)
@@ -47,15 +44,12 @@ namespace InvoiceService.Repositories
             {
                 ReceiverMail = invoice.Email,
                 Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
-                Header = mail.Header + DateTime.Now.Ticks
+                Header = mail.Header
             });
         }
 
         public string CreatePaymentLink(PaymentModel payment)
         {
-            //Seends Payment link to payment provider
-
-            //Dummy integration with PayPal
             try
             {
                 WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
@@ -71,7 +65,7 @@ namespace InvoiceService.Repositories
 
         public void DeleteInvoice(string id)
         {
-            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assuming "Id" is a property of InvoiceModel and its type is int
+            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
             _invoices.DeleteOne(filter);
         }
 
@@ -83,20 +77,18 @@ namespace InvoiceService.Repositories
         public InvoiceModel GetById(string id)
         {
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
-            return _invoices.Find(filter).SingleOrDefault();
+            return _invoices.Find(filter).FirstOrDefault();
         }
 
         public void SendInvoice(InvoiceModel invoice)
         {
-            // Simulate sending the invoice via a messaging system or an email service.
-            // This operation would typically involve another service and not directly relate to MongoDB actions.
             try
             {
                 MailModel mail = new MailModel()
                 {
                     ReceiverMail = invoice.Email,
-                    Content = this.mail.Content,
-                    Header = this.mail.Header + DateTime.Now.Ticks
+                    Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
+                    Header = this.mail.Header
                 };
                 queue.Add(mail);
             }
@@ -123,37 +115,46 @@ namespace InvoiceService.Repositories
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
         {
+            InvoiceModel currentInvoice = GetById(newInvoiceData.Id);
+
+            Console.WriteLine(JsonSerializer.Serialize(currentInvoice));
+
+            if (newInvoiceData.PaidStatus == default)
+                newInvoiceData.PaidStatus = currentInvoice.PaidStatus;
+            if (newInvoiceData.Price == default)
+                newInvoiceData.Price = currentInvoice.Price;
+            if (string.IsNullOrEmpty(newInvoiceData.Description))
+                newInvoiceData.Description = currentInvoice.Description;
+            if (string.IsNullOrEmpty(newInvoiceData.Address))
+                newInvoiceData.Address = currentInvoice.Address;
+            if (string.IsNullOrEmpty(newInvoiceData.Email))
+                newInvoiceData.Email = currentInvoice.Email;
+
             var filter = Builders<InvoiceModel>.Filter.Eq("Id", newInvoiceData.Id);
             var update = Builders<InvoiceModel>.Update
-                            .Set(x => x.Price, newInvoiceData.Price); // Example of updating the amount
-                                                                       // Add other properties to update as required
-                            
+                .Set(x => x.PaidStatus, newInvoiceData.PaidStatus)
+                .Set(x => x.Price, newInvoiceData.Price)
+                .Set(x => x.Description, newInvoiceData.Description)
+                .Set(x => x.Address, newInvoiceData.Address)
+                .Set(x => x.Email, newInvoiceData.Email);
+
             _invoices.UpdateOne(filter, update);
             return newInvoiceData;
         }
 
         public void ValidateInvoice(string id)
         {
-            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id); // Assumption: 'Id' is the property representing the unique identifier.
-            var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true); // Assuming 'PaidStatus' is the property to update.
+            var filter = Builders<InvoiceModel>.Filter.Eq("Id", id);
+            var update = Builders<InvoiceModel>.Update.Set(i => i.PaidStatus, true);
 
-            var result = _invoices.UpdateOne(filter, update);
-
-            // Optionally, check the result to see if the update was successful
-            if (result.MatchedCount == 0)
+            _invoices.UpdateOne(filter, update);
+            
+            if (_invoices.UpdateOne(filter, update).MatchedCount == 0)
             {
-                // Handle the case where no document was found with the provided id.
-                // For example, you could throw a NotFoundException or handle it as you see fit.
                 throw new KeyNotFoundException($"No invoice found with ID {id}.");
             }
-            else if (result.ModifiedCount == 0)
-            {
-                // Handle the case where the document was found, but not modified,
-                // which could happen if the invoice was already marked as paid.
-                // This might not require an action, but you can log this situation or handle it as needed.
-            }
-            // If needed, you can also return some information (like a boolean indicating success or the updated document), 
-            // depending on whether the method's return type is void in your original design.
+            
+            AuctionCoreLogger.Logger.Info($"Invoice validated with id: {id}");
         }
     }
 }

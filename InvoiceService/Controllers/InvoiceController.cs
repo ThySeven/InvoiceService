@@ -53,12 +53,12 @@ namespace InvoiceService.Controllers
                 _logger.LogInformation($"{invoice.Id} created");
                 string link = _invoiceRepository.CreatePaymentLink(payment);
                 _logger.LogInformation($"Payment link created: {link}");
-                return Ok(link); // Assuming CreateInvoice returns the created invoice
+                return Ok(link);
             }
             catch (Exception ex)
             {
                 _logger.LogCritical($"Failed to create invoice invoice: {ex} # model: {JsonSerializer.Serialize(invoice)} ");
-                return BadRequest("Bad request");
+                return BadRequest($"Failed to create invoice invoice: {ex}");
             }
         }
 
@@ -68,14 +68,12 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                _invoiceRepository.GetById(id);
-                _logger.LogInformation($"{id} created");
-                return Ok(); // Assuming CreateInvoice returns the created invoice
+                return Ok(_invoiceRepository.GetById(id));
             }
             catch (Exception ex)
             {
                 _logger.LogCritical($"Failed to get by id: {id} # {ex}");
-                return BadRequest("Bad request");
+                return BadRequest($"Failed to get by id: {id} # {ex}");
             }
         }
 
@@ -85,33 +83,29 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                var invoice = _invoiceRepository.GetAll();
-                _logger.LogInformation($"Fetched all invoices: {JsonSerializer.Serialize(invoice)}");
-                return Ok(); // Assuming CreateInvoice returns the created invoice
+                return Ok(_invoiceRepository.GetAll());
             }
             catch (Exception ex)
             {
                 _logger.LogCritical($"Failed to get: {ex}");
-                return BadRequest("Bad request");
+                return BadRequest($"Failed to get: {ex}");
             }
         }
 
         [Authorize]
         [HttpGet("validate/{id}")]
-        public IActionResult ValidateInvoice(string id, ParcelModel parcel)
+        public IActionResult ValidateInvoice(string id)
         {
             try
             {
                 _invoiceRepository.ValidateInvoice(id);
-                _invoiceRepository.SendParcelInformation(parcel);
-
                 _logger.LogInformation($"Parcel validated: {id}");
-                return Ok(); // Assuming CreateInvoice returns the created invoice
+                return Ok();
             }
             catch (Exception ex)
             {
                 _logger.LogCritical($"Failed to validate Invoice {id}: {ex}");
-                return BadRequest("Bad request");
+                return BadRequest($"Failed to validate Invoice {id}: {ex}");
             }
         }
 
@@ -123,12 +117,12 @@ namespace InvoiceService.Controllers
             {
                 _invoiceRepository.SendInvoice(invoice);
                 _logger.LogInformation($"Invoice sent with id: {invoice.Id}");
-                return Ok(); // Assuming SendInvoice doesn't return anything
+                return Ok($"Invoice sent with id: {invoice.Id}");
             }
             catch (Exception ex)
             {
-                _logger.LogCritical($"Failed to send invoice: {ex} # model: {JsonSerializer.Serialize(invoice)} ");
-                return BadRequest("Bad request");
+                _logger.LogCritical($"Failed to send invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
+                return BadRequest($"Failed to send invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
             }
         }
 
@@ -138,17 +132,15 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                var result = _invoiceRepository.UpdateInvoice(invoice);
+                _invoiceRepository.UpdateInvoice(invoice);
                 _logger.LogInformation($"Invoice updated with id: {invoice.Id}");
-                return Ok(result); // Assuming UpdateInvoice doesn't return anything
+                return Ok($"Invoice updated with id: {invoice.Id}");
             }
             catch (Exception ex)
             {
-
-                _logger.LogCritical($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)} ");
-                return BadRequest("Bad Request");
+                _logger.LogCritical($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
+                return BadRequest($"Failed to update invoice: {ex} # model: {JsonSerializer.Serialize(invoice)}");
             }
-
         }
 
         [Authorize]
@@ -159,13 +151,13 @@ namespace InvoiceService.Controllers
             {
                 _invoiceRepository.DeleteInvoice(id);
                 _logger.LogInformation($"Invoice deleted with id: {id}");
-                return Ok(); // Assuming UpdateInvoice doesn't return anything
+                return Ok($"Invoice deleted with id: {id}");
             }
             catch (Exception ex)
             {
 
                 _logger.LogCritical($"Failed to delete id {id}: {ex.Message}");
-                return BadRequest("Bad Request");
+                return BadRequest($"Failed to delete id {id}: {ex.Message}");
             }
         }
 
@@ -177,12 +169,12 @@ namespace InvoiceService.Controllers
             {
                 string link = _invoiceRepository.CreatePaymentLink(payment);
                 _logger.LogInformation($"Payment link created: {link}");
-                return Ok(); // Assuming SendInvoice doesn't return anything
+                return Ok($"Payment link created: {link}");
             }
             catch (Exception ex)
             {
-                _logger.LogCritical($"Failed to send payment link: {ex} # model: {JsonSerializer.Serialize(payment)} ");
-                return BadRequest("Bad request");
+                _logger.LogCritical($"Failed to send payment link: {ex} # model: {JsonSerializer.Serialize(payment)}");
+                return BadRequest($"Failed to send payment link: {ex} # model: {JsonSerializer.Serialize(payment)}");
             }
         }
 
@@ -194,14 +186,13 @@ namespace InvoiceService.Controllers
             {
                 _invoiceRepository.SendParcelInformation(parcel);
                 _logger.LogInformation($"Parcelinfo sent: {parcel}");
-                return Ok(); // Assuming SendInvoice doesn't return anything
+                return Ok();
             }
             catch (Exception ex)
             {
-                _logger.LogCritical($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)} ");
-                return BadRequest("Bad request");
+                _logger.LogCritical($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)}");
+                return BadRequest($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)}");
             }
         }
-
     }
 }

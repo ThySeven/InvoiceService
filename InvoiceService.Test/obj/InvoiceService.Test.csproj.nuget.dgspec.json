@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj": {}
+    "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj": {
+    "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
         "projectName": "InvoiceService.Test",
-        "projectPath": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
-        "packagesPath": "C:\\Users\\JeffS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService.Test\\obj\\",
+        "projectPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\InvoiceService.Test.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JeffS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\InvoiceService.csproj": {
-                "projectPath": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\InvoiceService.csproj"
+              "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj": {
+                "projectPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj"
               }
             }
           }
@@ -40,7 +40,9 @@
           ]
         },
         "restoreAuditProperties": {
-          "enableAudit": "default"
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -84,21 +86,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\InvoiceService.csproj": {
+    "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\InvoiceService.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj",
         "projectName": "InvoiceService",
-        "projectPath": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\InvoiceService.csproj",
-        "packagesPath": "C:\\Users\\JeffS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JeffS\\Dropbox\\EAAA\\4.Semester\\Projekt\\InvoiceService\\InvoiceService\\obj\\",
+        "projectPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\InvoiceService.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicol\\OneDrive\\Dokumenter\\Code\\Projekt-4Sem\\InvoiceService\\InvoiceService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JeffS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,7 +122,9 @@
           ]
         },
         "restoreAuditProperties": {
-          "enableAudit": "default"
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -179,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
