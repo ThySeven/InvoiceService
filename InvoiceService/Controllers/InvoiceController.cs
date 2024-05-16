@@ -183,5 +183,12 @@ namespace InvoiceService.Controllers
                 return BadRequest($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)}");
             }
         }
+
+        [AllowAnonymous]
+        [HttpGet("dummyparcelurl/{parcelurl}")]
+        public IActionResult DummyParcelViewPage(string parcelurl)
+        {
+            return Ok($"This is a dummy tracking page for parcel {parcelurl}");
+        }
     }
 }

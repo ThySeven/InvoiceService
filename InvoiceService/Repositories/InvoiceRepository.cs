@@ -138,6 +138,7 @@ namespace InvoiceService.Repositories
             try
             {
                 WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
+
             }
             catch (Exception ex)
             {
@@ -145,7 +146,7 @@ namespace InvoiceService.Repositories
             }
             Task.Delay(2000);
 
-            return $"https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/{parcel.Reference}";
+            return $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/dummyparcelurl/{parcel.Reference}";
         }
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
@@ -188,8 +189,33 @@ namespace InvoiceService.Repositories
             {
                 throw new KeyNotFoundException($"No invoice found with ID {id}.");
             }
-            
+
+
             AuctionCoreLogger.Logger.Info($"Invoice validated with id: {id}");
+
+            InvoiceModel invoice = _invoices.Find(filter).First();
+
+
+            ParcelModel parcel = new ParcelModel
+            {
+                Weight = 2.5,
+                Reference = invoice.Id,
+                Comment = "Handle with care",
+                WeightCategory = "Medium",
+                Height = 30.0,
+                Width = 20.0,
+                Length = 50.0
+            };
+
+            string parcelLink = SendParcelInformation(parcel);
+
+
+            queue.Add(new MailModel
+            {
+                ReceiverMail = invoice.Email,
+                Content = (new ParcelHtmlModel(parcel, parcelLink)).HtmlContent,
+                Header = mail.Header
+            });
         }
     }
 }
