@@ -214,7 +214,7 @@ namespace InvoiceService.Repositories
             {
                 ReceiverMail = invoice.Email,
                 Content = (new ParcelHtmlModel(parcel, parcelLink)).HtmlContent,
-                Header = mail.Header
+                Header = "GrønOgOlsen Parcel Tracking"
             });
         }
     }
