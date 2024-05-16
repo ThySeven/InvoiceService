@@ -28,7 +28,7 @@ namespace InvoiceService.Repositories
 
             mail = new MailModel()
             {
-                Header = "GrønOgOlsen Invoice - Betal!",
+                Header = "GrønOgOlsen Invoice",
                 Content = (new InvoiceHtmlModel(new InvoiceModel { Email = "customer@example.com" }, "")).HtmlContent,
                 ReceiverMail = "customer@example.com"
             };
