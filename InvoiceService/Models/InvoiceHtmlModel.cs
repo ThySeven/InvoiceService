@@ -4,11 +4,8 @@
     {
         private string htmlContent;
 
-        public InvoiceHtmlModel(InvoiceModel invoice)
+        public InvoiceHtmlModel(InvoiceModel invoice, string paymentUrl)
         {
-        
-
-
             htmlContent = @"<!DOCTYPE html>
 <html lang=""en"">
 <head>
@@ -51,10 +48,24 @@
     text-align: right;
     margin-top: 20px;
   }
+  .pay-now-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+  }
+  .pay-now-btn:hover {
+    background-color: #218838;
+  }
 </style>
 </head>
 <body>
-
+" + @$"
 <div class=""company-address"">
   <h2>Grøn & Olsen</h2>
   <p>Sønderhøj 30, 8260 Viby J</p>
@@ -63,49 +74,43 @@
 </div>
 
 <div class=""invoice-details"">
-  <h2>Invoice #12345</h2>
-  <p>Invoice Date: 2024-05-07</p>
-  <p>Due Date: 2024-05-09</p>
+  <h2>Invoice #{invoice.Id}</h2>
+  <p>Invoice Date: {invoice.CreatedAt}</p>
+  <p>Due Date: {invoice.CreatedAt.AddDays(3).ToString("dd/MM/yyyy")}</p>
 </div>
 
 <table>
   <thead>
     <tr>
       <th>Description</th>
-      <th>Quantity</th>
       <th>Price</th>
-      <th>Total</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Havetraktor</td>
-      <td>2</td>
-      <td>$100.00</td>
-      <td>$200.00</td>
-    </tr>
-    <tr>
-      <td>Bagger 293</td>
-      <td>5</td>
-      <td>$20.00</td>
-      <td>$100.00</td>
+      <td colspan=""2"">{invoice.Description}</td>
+      <td>{invoice.Price} DKK</td>
     </tr>
     <tr>
       <td colspan=""3"" style=""text-align:right;""><strong>Grand Total</strong></td>
-      <td><strong>$300.00</strong></td>
+      <td><strong>{invoice.Price} DKK</strong></td>
     </tr>
   </tbody>
 </table>
 
 <div class=""total-amount"">
-  <h2>Total Due: $300.00</h2>
+  <h2>Total Due: {invoice.Price} DKK</h2>
 </div>
+
+<a href=""{paymentUrl}"" class=""pay-now-btn"">Pay Now</a>
+
 
 <div class=""signature"">
   <p>Authorized Signature</p>
   <img src=""https://raw.githubusercontent.com/ThySeven/MailService/main/Images/2024_05_08_0lp_Kleki.png"" alt=""Signature"">
   <p>Kell Olsen, CEO</p>
 </div>
+
 
 </body>
 </html>";

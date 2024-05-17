@@ -28,8 +28,8 @@ namespace InvoiceService.Repositories
 
             mail = new MailModel()
             {
-                Header = "GrønOgOlsen Invoice - Betal!",
-                Content = (new InvoiceHtmlModel(new InvoiceModel { Email = "customer@example.com" })).HtmlContent,
+                Header = "GrønOgOlsen Invoice",
+                Content = (new InvoiceHtmlModel(new InvoiceModel { Email = "customer@example.com" }, "")).HtmlContent,
                 ReceiverMail = "customer@example.com"
             };
         }
@@ -39,30 +39,48 @@ namespace InvoiceService.Repositories
         }
 
 
-        public void CreateInvoice(InvoiceModel invoice)
+        public async Task CreateInvoice(InvoiceModel invoice)
         {
             _invoices.InsertOne(invoice);
+            PaymentModel payment = new PaymentModel
+            {
+                Price = invoice.Price,
+                CurrencyCode = "DKK",
+                InvoiceNumber = invoice.Id,
+                Reference = invoice.Id,
+                InvoiceDate = DateTime.Now,
+                Note = invoice.Description,
+                Term = "Net 30",
+                Memo = "Payment Via PalPay."
+            };
+            string paymentLink = await CreatePaymentLink(payment);
             queue.Add(new MailModel
             {
                 ReceiverMail = invoice.Email,
-                Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
+                Content = (new InvoiceHtmlModel(invoice, paymentLink)).HtmlContent,
                 Header = mail.Header
             });
         }
 
-        public string CreatePaymentLink(PaymentModel payment)
+        public async Task<string> CreatePaymentLink(PaymentModel payment)
         {
+            string link = string.Empty;
             try
             {
-                WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment);
+                link = await (await WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/submit", payment)).Content.ReadAsStringAsync();
+                if (string.IsNullOrEmpty(link))
+                {
+                    link = $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/validate/{payment.InvoiceNumber}";
+                }
             }
             catch(Exception ex)
             {
                 AuctionCoreLogger.Logger.Error("This error is intended, it shows a dummy http call to create a PayPal payment link");
+                link = $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/validate/{payment.InvoiceNumber}";
             }
             Task.Delay(2000);
-            
-            return $"https://thisisyourdummypaymentlinknotintegratedtopaypal.yet/payment/{payment.Reference}";
+
+            return link;
         }
 
         public void DeleteInvoice(string id)
@@ -82,14 +100,29 @@ namespace InvoiceService.Repositories
             return _invoices.Find(filter).FirstOrDefault();
         }
 
-        public void SendInvoice(InvoiceModel invoice)
+        public async Task SendInvoice(InvoiceModel invoice)
         {
             try
             {
+                PaymentModel payment = new PaymentModel
+                {
+                    Price = invoice.Price,
+                    CurrencyCode = "DKK",
+                    InvoiceNumber = invoice.Id,
+                    Reference = invoice.Id,
+                    InvoiceDate = DateTime.Now,
+                    Note = invoice.Description,
+                    Term = "Net 30",
+                    Memo = "Payment Via PalPay."
+                };
+
+                string paymentLink = await CreatePaymentLink(payment);
+
+
                 MailModel mail = new MailModel()
                 {
                     ReceiverMail = invoice.Email,
-                    Content = (new InvoiceHtmlModel(invoice)).HtmlContent,
+                    Content = (new InvoiceHtmlModel(invoice, paymentLink)).HtmlContent,
                     Header = this.mail.Header
                 };
                 queue.Add(mail);
@@ -105,6 +138,7 @@ namespace InvoiceService.Repositories
             try
             {
                 WebManager.GetInstance.HttpClient.PostAsJsonAsync("https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/submit", parcel);
+
             }
             catch (Exception ex)
             {
@@ -112,7 +146,7 @@ namespace InvoiceService.Repositories
             }
             Task.Delay(2000);
 
-            return $"https://thisisyourdummyparcelnotintegratedtogls.yet/shipment/{parcel.Reference}";
+            return $"{Environment.GetEnvironmentVariable("PublicIP")}/invoice/dummyparcelurl/{parcel.Reference}";
         }
 
         public InvoiceModel UpdateInvoice(InvoiceModel newInvoiceData)
@@ -155,8 +189,33 @@ namespace InvoiceService.Repositories
             {
                 throw new KeyNotFoundException($"No invoice found with ID {id}.");
             }
-            
+
+
             AuctionCoreLogger.Logger.Info($"Invoice validated with id: {id}");
+
+            InvoiceModel invoice = _invoices.Find(filter).First();
+
+
+            ParcelModel parcel = new ParcelModel
+            {
+                Weight = 2.5,
+                Reference = invoice.Id,
+                Comment = "Handle with care",
+                WeightCategory = "Medium",
+                Height = 30.0,
+                Width = 20.0,
+                Length = 50.0
+            };
+
+            string parcelLink = SendParcelInformation(parcel);
+
+
+            queue.Add(new MailModel
+            {
+                ReceiverMail = invoice.Email,
+                Content = (new ParcelHtmlModel(parcel, parcelLink)).HtmlContent,
+                Header = "GrønOgOlsen Parcel Tracking"
+            });
         }
     }
 }

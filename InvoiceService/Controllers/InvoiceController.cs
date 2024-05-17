@@ -40,22 +40,10 @@ namespace InvoiceService.Controllers
         {
             try
             {
-                PaymentModel payment = new PaymentModel
-                {
-                    Price = invoice.Price,
-                    CurrencyCode = "DKK",
-                    InvoiceNumber = invoice.Id,
-                    Reference = invoice.Id,
-                    InvoiceDate = DateTime.Now,
-                    Note = invoice.Description,
-                    Term = "Net 30",
-                    Memo = "Payment Via PalPay."
-                };
+
                 _invoiceRepository.CreateInvoice(invoice);
                 _logger.LogInformation($"{invoice.Id} created");
-                string link = _invoiceRepository.CreatePaymentLink(payment);
-                _logger.LogInformation($"Payment link created: {link}");
-                return Ok(link);
+                return Ok(invoice);
             }
             catch (Exception ex)
             {
@@ -94,15 +82,15 @@ namespace InvoiceService.Controllers
             }
         }
 
-        [Authorize(Policy = "InternalRequestPolicy")]
+        [AllowAnonymous]
         [HttpGet("validate/{id}")]
         public IActionResult ValidateInvoice(string id)
         {
             try
             {
                 _invoiceRepository.ValidateInvoice(id);
-                _logger.LogInformation($"Parcel validated: {id}");
-                return Ok();
+                _logger.LogInformation($"Invoice validated with id {id}");
+                return Ok($"Invoice validated with id {id}");
             }
             catch (Exception ex)
             {
@@ -165,11 +153,11 @@ namespace InvoiceService.Controllers
 
         [Authorize(Policy = "InternalRequestPolicy")]
         [HttpPost("createPaymentLink")]
-        public IActionResult CreatePaymentLink(PaymentModel payment)
+        public async Task<IActionResult> CreatePaymentLink(PaymentModel payment)
         {
             try
             {
-                string link = _invoiceRepository.CreatePaymentLink(payment);
+                string link = await _invoiceRepository.CreatePaymentLink(payment);
                 _logger.LogInformation($"Payment link created: {link}");
                 return Ok($"Payment link created: {link}");
             }
@@ -194,6 +182,13 @@ namespace InvoiceService.Controllers
                 _logger.LogCritical($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)}");
                 return BadRequest($"Failed to send parcel info: {ex} # model: {JsonSerializer.Serialize(parcel)}");
             }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("dummyparcelurl/{parcelurl}")]
+        public IActionResult DummyParcelViewPage(string parcelurl)
+        {
+            return Ok($"This is a dummy tracking page for parcel {parcelurl}");
         }
     }
 }
