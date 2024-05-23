@@ -81,14 +81,16 @@ InvoiceService follows a microservice architecture within the broader Auction Co
 
 ### API Endpoints
 
-| Method | Endpoint                | Description                         |
-|--------|-------------------------|-------------------------------------|
-| GET    | /invoices               | Retrieve all invoices               |
-| POST   | /invoices               | Create a new invoice                |
-| GET    | /invoices/:id           | Get details of a specific invoice   |
-| PUT    | /invoices/:id           | Update an existing invoice          |
-| DELETE | /invoices/:id           | Delete a specific invoice           |
-| POST   | /invoices/:id/validate  | Validate a specific invoice         |
+| Method | Endpoint                    | Description                         |
+|--------|-----------------------------|-------------------------------------|
+| GET    | /invoice/getall             | Retrieve all invoices               |
+| POST   | /invoice/create             | Create a new invoice                |
+| GET    | /invoice/getbyid/:id        | Get details of a specific invoice   |
+| PUT    | /invoice/update/:id         | Update an existing invoice          |
+| DELETE | /invoice/delete/:id         | Delete a specific invoice           |
+| POST   | /invoice/validate/:id       | Validate a specific invoice         |
+| POST   | /invoice/createpaymentlink  | Creates a payment link              |
+| POST   | /invoice/createparcelinfo   | Creates parcel info link            |
 
 ## Security
 
