@@ -37,13 +37,12 @@ namespace InvoiceService.Test
         public void CreateInvoice_InsertsInvoice()
         {
             repository.CreateInvoice(testingInvoice);
-            mockCollection.Verify(c => c.InsertOne(It.IsAny<InvoiceModel>(), null, default(CancellationToken)), Times.Once);
+            mockCollection.Verify(c => c.InsertOne(It.IsAny<InvoiceModel>(), null, default), Times.Once);
         }
 
         [TestMethod]
         public void DeleteInvoice_DeletesById()
         {
-
             repository.DeleteInvoice(testingInvoice.Id);
 
             mockCollection.Verify(c => c.DeleteOne(It.IsAny<FilterDefinition<InvoiceModel>>(), default), Times.Once);
@@ -53,7 +52,7 @@ namespace InvoiceService.Test
         public void GetAll_ReturnsAllInvoices()
         {
             var invoices = new List<InvoiceModel> { new InvoiceModel(), new InvoiceModel() };
-            mockCursor.SetupSequence(_ => _.MoveNext(It.IsAny<System.Threading.CancellationToken>())).Returns(true).Returns(false);
+            mockCursor.SetupSequence(_ => _.MoveNext(It.IsAny<CancellationToken>())).Returns(true).Returns(false);
             mockCursor.Setup(_ => _.Current).Returns(invoices);
             mockCollection.Setup(x => x.FindSync(It.IsAny<FilterDefinition<InvoiceModel>>(), It.IsAny<FindOptions<InvoiceModel, InvoiceModel>>(), default)).Returns(mockCursor.Object);
 
@@ -77,7 +76,7 @@ namespace InvoiceService.Test
         [TestMethod]
         public void UpdateInvoice_UpdatesInvoice()
         {
-            var invoiceToUpdate = new InvoiceModel() { Price = 200 };
+            var invoiceToUpdate = new InvoiceModel() { Price = 200, Description = "Description", Address="Address", Email="mail@mail.dk", Id = "bc77ece8-032d-4269-88a9-9d186358b885", PaidStatus=false };
             SetUpCursor(new List<InvoiceModel> { invoiceToUpdate });
 
             var result = repository.UpdateInvoice(invoiceToUpdate);
@@ -98,7 +97,7 @@ namespace InvoiceService.Test
 
         private void SetUpCursor(List<InvoiceModel> data)
         {
-            mockCursor.SetupSequence(c => c.MoveNext(It.IsAny<System.Threading.CancellationToken>()))
+            mockCursor.SetupSequence(c => c.MoveNext(It.IsAny<CancellationToken>()))
                       .Returns(true)
                       .Returns(false);
             mockCursor.Setup(c => c.Current).Returns(data);

@@ -72,12 +72,12 @@ namespace InvoiceService.Test
         public void UpdateInvoice_UpdatesExistingInvoice()
         {
             var mockService = new Mock<IInvoiceRepository>();
-            var invoice = new InvoiceModel { Description = "old Invoice", Price = 150.0 };
-            var newInvoice = new InvoiceModel { Description = "Updated Invoice", Price = 150.0 };
+            string guid = "bc77ece8-032d-4269-88a9-9d186358b885";
+            var newInvoice = new InvoiceModel { Description = "Updated Invoice", Price = 150.0, Id = guid };
 
-            mockService.Setup(s => s.UpdateInvoice(invoice)).Returns(newInvoice);
+            mockService.Setup(s => s.UpdateInvoice(newInvoice)).Returns(newInvoice);
 
-            var result = mockService.Object.UpdateInvoice(invoice);
+            var result = mockService.Object.UpdateInvoice(newInvoice);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("Updated Invoice", result.Description);

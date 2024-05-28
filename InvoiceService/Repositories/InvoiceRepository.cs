@@ -15,7 +15,7 @@ namespace InvoiceService.Repositories
     {
         private readonly IMongoCollection<InvoiceModel> _invoices;
         private string _connectionString = Environment.GetEnvironmentVariable("MongoDBConnectionString");
-        IAuctionCoreQueue queue;
+        public IAuctionCoreQueue queue;
 
         MailModel mail;
 
@@ -58,7 +58,7 @@ namespace InvoiceService.Repositories
             {
                 ReceiverMail = invoice.Email,
                 Content = (new InvoiceHtmlModel(invoice, paymentLink)).HtmlContent,
-                Header = mail.Header
+                Header = "GrønOgOlsen Invoice"
             });
         }
 
