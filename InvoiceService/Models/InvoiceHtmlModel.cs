@@ -104,6 +104,7 @@
 
 <a href=""{paymentUrl}"" class=""pay-now-btn"">Pay Now</a>
 
+<p>If you wish to cancel the invoice, reply to this mail.</p>
 
 <div class=""signature"">
   <p>Authorized Signature</p>
